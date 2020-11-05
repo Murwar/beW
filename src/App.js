@@ -16,9 +16,9 @@ class App extends Component {
 
     render() {
         return (
-            <>
+            <div className={'page'}>
                 <Router>
-                    <Navbar/>
+                    <Navbar />
                     <Switch>
                         <Route path={'/'} exact component={Dashboard}/>
                         <Route path={'/arrival_schedule'} component={ArrivalSchedule}/>
@@ -29,7 +29,7 @@ class App extends Component {
                         <Route path={'/logout'} component={Logout}/>
                     </Switch>
                 </Router>
-            </>
+            </div>
 
         )
     }

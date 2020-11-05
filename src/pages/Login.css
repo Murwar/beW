@@ -1,0 +1,45 @@
+.login {
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.login-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.login_btn {
+    position: center;
+    align-self: center;
+    color: #2E3A59;
+    background-color: #FFBD12;;
+    height: 100%;
+    width: 100%;
+    font-family: "Segoe UI", serif;
+}
+
+#input {
+    background-color: white;
+    font-family: "Segoe UI", serif;
+}
+
+.label {
+    padding-left: 20%;
+}
+
+@media (min-width: 650px ) {
+    .login {
+        background-position: center center;
+    }
+
+    .login-content {
+        align-items: center;
+        justify-content: center;
+    }
+}
