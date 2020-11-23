@@ -20,9 +20,12 @@ class HotelFirst extends Component {
                                 <p className={'textInCards'}>descrition</p>
                                
                                 <div className={'horizontal'}>
+
+                                <a href='/room_settings'>
                                     <button className={'roomSettingsButtom'} >
                                         настроить
                                 </button>
+                                </a>
                                     
                                 </div>
 

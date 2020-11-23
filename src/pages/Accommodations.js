@@ -23,16 +23,16 @@ class Accommodations extends Component {
                                 <p className={'textInCards_accommodations'}>Улица веселья 11.</p>
 
                                 <div className={'horizontal'}>
-                                    <a  href='/hotel_first' >
+                                    <a href='/hotel_settings' >
                                         <button className={'hotelSettingsButtom_accommodations'} >
                                             настроить
-                                </button>
+                                         </button>
                                     </a>
                                     <div >
                                         <a href='/hotel_first' >
                                             <button className={'roomsButton_accommodations'}>
                                                 номера
-                                    </button>
+                                            </button>
                                         </a>
                                     </div>
                                 </div>
@@ -47,10 +47,10 @@ class Accommodations extends Component {
                                 <div className={'horizontal'}>
                                     <button className={'hotelSettingsButtom_accommodations'} >
                                         настроить
-                                </button>
+                                      </button>
                                     <button className={'roomsButton_accommodations'}>
                                         номера
-                                </button>
+                                     </button>
                                 </div>
 
 
@@ -96,12 +96,13 @@ class Accommodations extends Component {
                                 <p className={'textInCards_accommodations'}>Улица МИРА 11.</p>
 
                                 <div className={'horizontal'}>
+
                                     <button className={'hotelSettingsButtom_accommodations'} >
                                         настроить
-                                </button>
+                                   </button>
                                     <button className={'roomsButton_accommodations'}>
                                         номера
-                                </button>
+                                    </button>
                                 </div>
 
                             </div>
