@@ -1,13 +1,15 @@
-import React, {Component} from 'react';
+import React from 'react';
+import store from 'store';
 
-class Logout extends Component {
-    render() {
-        return (
-            <div className='logout'>
-                <h1>Logout</h1>
-            </div>
-        );
-    }
+
+const handleLogout = history => () => {
+    store.remove('loggedIn');
+    history.push('/login');
+};
+
+const Logout = ({history}) => {
+    handleLogout(history);
 }
+
 
 export default Logout;

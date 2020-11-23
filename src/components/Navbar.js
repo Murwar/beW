@@ -1,14 +1,21 @@
 import React, {useState} from 'react';
 import Link from "react-router-dom/Link";
 import * as IoIcons from 'react-icons/io';
-import {SidebarData} from "./SidebarData";
+import {SidebarConstants} from "../constants";
 import "./Navbar.css";
 import {IconContext} from "react-icons";
 import avatar from '../resources/images/avatar.png'
+import store from "store";
 
-function Navbar() {
+const handleLogout = history => () => {
+    store.remove('loggedIn');
+    history.push('/login');
+}
+
+const Navbar = ({history}) => {
     const [sidebar, setSidebar] = useState(false);
     const showSidebar = () => setSidebar(!sidebar);
+
     return (
         <nav className={'sidebar'}>
             <IconContext.Provider value={{color: '#fffff'}}>
@@ -20,7 +27,6 @@ function Navbar() {
                         <Link to="#" className="menu-bars active">
                             <IoIcons.IoMdArrowDropleft onClick={showSidebar}/>
                         </Link>
-
                     </div>
                     :
                     <div className="navbar">
@@ -34,15 +40,25 @@ function Navbar() {
 
                 {sidebar ?
                     <div className={'navmenu active'}>
-                        {SidebarData.map((item, index) => {
+                        {SidebarConstants.map((item, index) => {
                             return (
                                 <div>
-                                    <li key={index} className={item.cName + ' active'}>
-                                        <Link to={item.path}>
-                                            {item.icon}
-                                            <span>{item.title}</span>
-                                        </Link>
-                                    </li>
+                                    {item.title === 'Выйти' ?
+                                        <li key={index} className={item.cName + ' active'}
+                                            onClick={handleLogout(history)}>
+                                            <Link to={item.path}>
+                                                {item.icon}
+                                                <span>{item.title}</span>
+                                            </Link>
+                                        </li>
+                                        :
+                                        <li key={index} className={item.cName + ' active'}>
+                                            <Link to={item.path}>
+                                                {item.icon}
+                                                <span>{item.title}</span>
+                                            </Link>
+                                        </li>
+                                    }
                                     {index === 3 ?
                                         <div className={"acc_section"}>
                                             <hr/>
@@ -59,14 +75,22 @@ function Navbar() {
                     </div>
                     :
                     <div className={'navmenu nonactive'}>
-                        {SidebarData.map((item, index) => {
+                        {SidebarConstants.map((item, index) => {
                             return (
                                 <div>
-                                    <li key={index} className={item.cName}>
-                                        <Link to={item.path}>
-                                            {item.icon}
-                                        </Link>
-                                    </li>
+                                    {item.title === 'Выйти' ?
+                                        <li key={index} className={item.cName} onClick={handleLogout(history)}>
+                                            <Link to={item.path}>
+                                                {item.icon}
+                                            </Link>
+                                        </li> :
+                                        <li key={index} className={item.cName}>
+                                            <Link to={item.path}>
+                                                {item.icon}
+                                            </Link>
+                                        </li>
+                                    }
+
                                     {index === 3 || index === 5 ?
                                         <hr/>
                                         :

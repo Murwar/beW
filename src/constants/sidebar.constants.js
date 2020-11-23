@@ -4,9 +4,7 @@ import * as BiIcons from 'react-icons/bi';
 import * as ImIcons from 'react-icons/im';
 import * as RiIcons from 'react-icons/ri';
 
-
-
-export const SidebarData = [
+export const SidebarConstants = [
     {
         title: 'Dashboard',
         path: '/',
