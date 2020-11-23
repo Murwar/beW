@@ -11,7 +11,7 @@ class HotelSettings extends Component {
 
                     <table>
                         <tr>
-                            <td colspan="2">
+                            <td colspan="3">
                                 <h1 className={'title_set_hotel'} >  настройка объекта</h1>
                             </td>
                         </tr>
@@ -38,9 +38,20 @@ class HotelSettings extends Component {
                             </td>
                         </tr>
 
+                        
+
+
+
+                    </table>
+
+                    <table>
                         <tr>
                             <td>
                                 <h1 className={'enterHotelData_new_hotel'} > Номера </h1>
+                            </td>
+
+                            <td> 
+                                <input className={'set_rooms'} type="text" name="hotel_rooms" placeholder="введите количество номеров" size="5" maxlength="3"></input>
                             </td>
 
                             <td>
@@ -51,16 +62,19 @@ class HotelSettings extends Component {
                                 </a>
                             </td>
                         </tr>
-
-
-
                     </table>
 
 
 
                     <div className={'horizontal'}>
-                        <button className={'button_save_new_hotel'}>
-                            Сохранить
+
+                    <button className={'button_delete_hotel'}>
+                            Удалить объект
+                                </button>
+
+
+                        <button className={'button_save_settings_hotel'}>
+                            Сохранить изменения
                                 </button>
 
                         <button className={'button_cancel_new_hotel'}>
