@@ -71,7 +71,7 @@ class HotelFirst extends Component {
                             </div>
 
                             <div >
-                                <a >
+                                <a href='/add_new_room'>
                                     <button className={'buttonAddRoom'}>
                                         ДОБАВИТЬ НОВЫЙ <br /> номер
                                     </button>

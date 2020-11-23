@@ -1,51 +1,12 @@
-.addNewHotel {
+.addNewRoom {
     background-color: whitesmoke;
     width: 100%;
     height: 100%;
 }
-.title_new_hotel {
-    margin-top: 45px;
-    margin-left: 250px;
-    margin-bottom: 25px;
 
-    font-family: Roboto;
-    font-style: normal;
-    text-transform: uppercase;
-    font-size: 30px;
-    letter-spacing: 0.15px;
-    color: #000000;
-}
-.rectangle_new_hotel {
-    width: 1000px;
-    height: 600px;
-    margin-left: 350px;
-    margin-top: 100px;
-    background: white;
-    border-radius: 20px;
-    border-style: solid;
-    border-color: rgba(224, 228, 231, 0.836);
-    transition: all linear .2s;
-    box-shadow: 0 14px 28px rgba(3, 69, 131, 0.603), 0 4px 12px rgba(36, 131, 219, 0.842);
-}
-
-.card_new_hotel {
-    margin-top: 100px;
-}
-
-
-.vertical {
-    display: flex;
-    flex-direction: column;
-}
-
-.horizontal {
-    display: flex;
-    flex-direction: row;
-}
-
-div h1.enterHotelData_new_hotel {
-    margin-left: 50px;
-
+.title_new_room {
+    margin-top: 25px;
+    margin-left: 300px;
     font-family: Roboto;
     font-style: normal;
     text-transform: uppercase;
@@ -54,29 +15,53 @@ div h1.enterHotelData_new_hotel {
     color: #000000;
 }
 
-input.input_data_name {
-    width: 500px;
-    height: 50px;
-   
+.rectangle_new_room {
+    width: 1000px;
+    height: 800px;
+
+    margin-left: 350px;
+    margin-top: 80px;
+
+    background: white;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgba(224, 228, 231, 0.836);
+    transition: all linear .2s;
+    box-shadow: 0 14px 28px rgba(3, 69, 131, 0.603), 0 4px 12px rgba(36, 131, 219, 0.842);
 }
 
-input.input_data_adress {
-    width: 500px;
-    height: 50px;
-  
+
+
+div h1.enterRoomData {
+    margin-left: 80px;
+    font-family: Roboto;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 0.15px;
+    color: #000000;
 }
 
-input.input_data_rooms {
-    width: 200px;
+input.input_rooms {
+    margin-left: 80px;
+    width: 300px;
     height: 50px;
-   
 }
 
-.button_save_new_hotel {
+.input_rooms_select {
+    margin-left:80px;
+    width: 300px;
+    height: 50px;
+}
+
+table td {
+    border-bottom: 1px solid transparent;
+}
+
+.button_save_new_room{
     width: 150px;
     height: 80px;
-    margin: 20px;
-    margin-top: 50px;
+    
     margin-left: 300px;
 
 
@@ -92,18 +77,18 @@ input.input_data_rooms {
     transition: all linear .2s;
 }
 
-.button_save_new_hotel:hover {
+.button_save_new_room:hover {
     font-size: 16px;
     border-color: rgba(20, 102, 61, 0.973);
     background: rgba(40, 204, 122, 0.973);
     box-shadow: 0 4px 15px rgba(36, 219, 127, 0.842);
 }
 
-.button_cancel_new_hotel {
+.button_cancel_new_room {
     width: 150px;
     height: 80px;
-    margin: 20px;
-    margin-top: 50px;
+    
+    
     margin-left: 100px;
 
 
@@ -117,7 +102,7 @@ input.input_data_rooms {
     border-radius: 20px;
 }
 
-.button_cancel_new_hotel:hover {
+.button_cancel_new_room:hover {
     font-size: 16px;
     border-color: rgba(184, 29, 9, 0.973);
     background: rgba(250, 105, 86, 0.973);

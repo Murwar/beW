@@ -17,18 +17,20 @@ class Accommodations extends Component {
                 <div className={'cards'}>
                     <div className={'vertical'}>
                         <div className={'horizontal'}>
-                            <div className={'rectangle'}>
-                                <img src={hotel1} alt="Hotel-1" className={'image'} ></img>
-                                <p className={'textInCards'}>“Отель 1” | 10 номеров.</p>
-                                <p className={'textInCards'}>Улица веселья 11.</p>
+                            <div className={'rectangle_accommodations'}>
+                                <img src={hotel1} alt="Hotel-1" className={'image_accommodations'} ></img>
+                                <p className={'textInCards_accommodations'}>“Отель 1” | 10 номеров.</p>
+                                <p className={'textInCards_accommodations'}>Улица веселья 11.</p>
 
                                 <div className={'horizontal'}>
-                                    <button className={'hotelSettingsButtom'} >
-                                        настроить
+                                    <a  href='/hotel_first' >
+                                        <button className={'hotelSettingsButtom_accommodations'} >
+                                            настроить
                                 </button>
+                                    </a>
                                     <div >
-                                        <a href='/hotel_first'>
-                                            <button className={'roomsButton'}>
+                                        <a href='/hotel_first' >
+                                            <button className={'roomsButton_accommodations'}>
                                                 номера
                                     </button>
                                         </a>
@@ -37,16 +39,16 @@ class Accommodations extends Component {
 
 
                             </div>
-                            <div className={'rectangle'}>
-                                <img src={hotel2} alt="Hotel-2" className={'image'} ></img>
-                                <p className={'textInCards'}>“Отель 2” | 8 номеров.</p>
-                                <p className={'textInCards'}>Улица ЖИЗНИ 11.</p>
+                            <div className={'rectangle_accommodations'}>
+                                <img src={hotel2} alt="Hotel-2" className={'image_accommodations'} ></img>
+                                <p className={'textInCards_accommodations'}>“Отель 2” | 8 номеров.</p>
+                                <p className={'textInCards_accommodations'}>Улица ЖИЗНИ 11.</p>
 
                                 <div className={'horizontal'}>
-                                    <button className={'hotelSettingsButtom'} >
+                                    <button className={'hotelSettingsButtom_accommodations'} >
                                         настроить
                                 </button>
-                                    <button className={'roomsButton'}>
+                                    <button className={'roomsButton_accommodations'}>
                                         номера
                                 </button>
                                 </div>
@@ -55,15 +57,15 @@ class Accommodations extends Component {
                             </div>
                             <div className={'rectangle'}>
 
-                                <img src={hotel} alt="Hotel" className={'image'} ></img>
-                                <p className={'textInCards'}>“Отель 2” | 12 номеров.</p>
-                                <p className={'textInCards'}>Улица УЧЕБЫ 11.</p>
+                                <img src={hotel} alt="Hotel" className={'image_accommodations'} ></img>
+                                <p className={'textInCards_accommodations'}>“Отель 2” | 12 номеров.</p>
+                                <p className={'textInCards_accommodations'}>Улица УЧЕБЫ 11.</p>
 
                                 <div className={'horizontal'}>
-                                    <button className={'hotelSettingsButtom'} >
+                                    <button className={'hotelSettingsButtom_accommodations'} >
                                         настроить
                                 </button>
-                                    <button className={'roomsButton'}>
+                                    <button className={'roomsButton_accommodations'}>
                                         номера
                                 </button>
                                 </div>
@@ -73,15 +75,15 @@ class Accommodations extends Component {
                         <div className={'horizontal'}>
                             <div className={'rectangle'}>
 
-                                <img src={hotel1} alt="Hotel-1" className={'image'} ></img>
-                                <p className={'textInCards'}>“Отель 4” | 9 номеров.</p>
-                                <p className={'textInCards'}>Улица НАДЕЖДЫ 11.</p>
+                                <img src={hotel1} alt="Hotel-1" className={'image_accommodations'} ></img>
+                                <p className={'textInCards_accommodations'}>“Отель 4” | 9 номеров.</p>
+                                <p className={'textInCards_accommodations'}>Улица НАДЕЖДЫ 11.</p>
 
                                 <div className={'horizontal'}>
-                                    <button className={'hotelSettingsButtom'} >
+                                    <button className={'hotelSettingsButtom_accommodations'} >
                                         настроить
                                 </button>
-                                    <button className={'roomsButton'}>
+                                    <button className={'roomsButton_accommodations'}>
                                         номера
                                 </button>
                                 </div>
@@ -89,15 +91,15 @@ class Accommodations extends Component {
                             </div>
                             <div className={'rectangle'}>
 
-                                <img src={hotel1} alt="Hotel-1" className={'image'} ></img>
-                                <p className={'textInCards'}>“Отель 5” | 10 номеров.</p>
-                                <p className={'textInCards'}>Улица МИРА 11.</p>
+                                <img src={hotel1} alt="Hotel-1" className={'image_accommodations'} ></img>
+                                <p className={'textInCards_accommodations'}>“Отель 5” | 10 номеров.</p>
+                                <p className={'textInCards_accommodations'}>Улица МИРА 11.</p>
 
                                 <div className={'horizontal'}>
-                                    <button className={'hotelSettingsButtom'} >
+                                    <button className={'hotelSettingsButtom_accommodations'} >
                                         настроить
                                 </button>
-                                    <button className={'roomsButton'}>
+                                    <button className={'roomsButton_accommodations'}>
                                         номера
                                 </button>
                                 </div>
@@ -107,7 +109,7 @@ class Accommodations extends Component {
 
                             <div >
                                 <a href='/add_new_hotel'>
-                                    <button className={'buttonAddNewHotel'}>
+                                    <button className={'buttonAddNewHotel_accommodations'}>
                                         ДОБАВИТЬ НОВЫЙ <br /> ОБЪЕКТ РАЗМЕЩЕНИЯ
                                     </button>
                                 </a>

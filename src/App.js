@@ -11,6 +11,7 @@ import Accommodations from "./pages/Accommodations";
 import Settings from "./pages/Settings";
 import Logout from "./pages/Logout";
 import AddNewHotel from './pages/AddNewHotel';
+import AddNewRoom from './pages/AddNewRoom';
 import HotelFirst from './pages/HotelFirst';
 import HotelSecond from './pages/HotelSecond';
 
@@ -31,6 +32,7 @@ class App extends Component {
                         <Route path={'/settings'} component={Settings}/>
                         <Route path={'/logout'} component={Logout}/>
                         <Route path={'/add_new_hotel'} component={AddNewHotel}/>
+                        <Route path={'/add_new_room'} component={AddNewRoom}/>
                         <Route path={'/hotel_first'} component={HotelFirst}/>
                         <Route path={'/hotel_second'} component={HotelSecond}/>
                     </Switch>
