@@ -15,6 +15,7 @@ import HotelSettings from './pages/HotelSettings';
 import AddNewRoom from './pages/AddNewRoom';
 import RoomSettings from './pages/RoomSettings';
 import HotelFirst from './pages/HotelFirst';
+import HotelSecond from './pages/HotelSecond';
 
 
 
@@ -40,6 +41,7 @@ class App extends Component {
                         <Route path={'/add_new_room'} component={AddNewRoom}/>
                         <Route path={'/room_settings'} component={RoomSettings}/>
                         <Route path={'/hotel_first'} component={HotelFirst}/>
+                        <Route path={'/hotel_second'} component={HotelSecond}/>
                        
                     </Switch>
                 </Router>

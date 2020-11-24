@@ -45,12 +45,18 @@ class Accommodations extends Component {
                                 <p className={'textInCards_accommodations'}>Улица ЖИЗНИ 11.</p>
 
                                 <div className={'horizontal'}>
-                                    <button className={'hotelSettingsButtom_accommodations'} >
-                                        настроить
-                                      </button>
-                                    <button className={'roomsButton_accommodations'}>
-                                        номера
+
+                                    <a href='/hotel_settings' >
+                                        <button className={'hotelSettingsButtom_accommodations'} >
+                                            настроить
+                                         </button>
+                                    </a>
+
+                                    <a href='/hotel_second' >
+                                        <button className={'roomsButton_accommodations'}>
+                                            номера
                                      </button>
+                                    </a>
                                 </div>
 
 
@@ -62,9 +68,11 @@ class Accommodations extends Component {
                                 <p className={'textInCards_accommodations'}>Улица УЧЕБЫ 11.</p>
 
                                 <div className={'horizontal'}>
-                                    <button className={'hotelSettingsButtom_accommodations'} >
-                                        настроить
-                                </button>
+                                    <a href='/hotel_settings' >
+                                        <button className={'hotelSettingsButtom_accommodations'} >
+                                            настроить
+                                         </button>
+                                    </a>
                                     <button className={'roomsButton_accommodations'}>
                                         номера
                                 </button>
@@ -80,9 +88,11 @@ class Accommodations extends Component {
                                 <p className={'textInCards_accommodations'}>Улица НАДЕЖДЫ 11.</p>
 
                                 <div className={'horizontal'}>
-                                    <button className={'hotelSettingsButtom_accommodations'} >
-                                        настроить
-                                </button>
+                                    <a href='/hotel_settings' >
+                                        <button className={'hotelSettingsButtom_accommodations'} >
+                                            настроить
+                                         </button>
+                                    </a>
                                     <button className={'roomsButton_accommodations'}>
                                         номера
                                 </button>
@@ -97,9 +107,11 @@ class Accommodations extends Component {
 
                                 <div className={'horizontal'}>
 
-                                    <button className={'hotelSettingsButtom_accommodations'} >
-                                        настроить
-                                   </button>
+                                    <a href='/hotel_settings' >
+                                        <button className={'hotelSettingsButtom_accommodations'} >
+                                            настроить
+                                         </button>
+                                    </a>
                                     <button className={'roomsButton_accommodations'}>
                                         номера
                                     </button>

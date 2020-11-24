@@ -97,14 +97,15 @@ class AddNewRoom extends Component {
                     </table>
 
                     <div className={'horizontal'}>
-                        <button className={'button_save_new_room'}>
+                        <button className={'button_save_new_room'}  onClick={this.props.history.goBack}>
                             Сохранить
                                 </button>
 
-                        <button className={'button_cancel_new_room'}>
+
+                        <button className={'button_cancel_new_room'} onClick={this.props.history.goBack}>
                             Отмена
                                 </button>
-
+                        
                     </div>
 
 

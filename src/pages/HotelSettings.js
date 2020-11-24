@@ -38,7 +38,7 @@ class HotelSettings extends Component {
                             </td>
                         </tr>
 
-                        
+
 
 
 
@@ -50,7 +50,7 @@ class HotelSettings extends Component {
                                 <h1 className={'enterHotelData_new_hotel'} > Номера </h1>
                             </td>
 
-                            <td> 
+                            <td>
                                 <input className={'set_rooms'} type="text" name="hotel_rooms" placeholder="введите количество номеров" size="5" maxlength="3"></input>
                             </td>
 
@@ -67,26 +67,30 @@ class HotelSettings extends Component {
 
 
                     <div className={'horizontal'}>
+                        <a href='' >
+                            <button className={'button_delete_hotel'}>
+                                Удалить объект
+                          </button>
+                        </a>
 
-                    <button className={'button_delete_hotel'}>
-                            Удалить объект
-                                </button>
+                      
+                            <button className={'button_save_settings_hotel'}  onClick={this.props.history.goBack}>
+                                Сохранить изменения
+                        </button>
+                      
 
-
-                        <button className={'button_save_settings_hotel'}>
-                            Сохранить изменения
-                                </button>
-
-                        <button className={'button_cancel_new_hotel'}>
-                            Отмена
-                                </button>
+                      
+                            <button className={'button_cancel_new_hotel'}  onClick={this.props.history.goBack}>
+                                Отмена
+                         </button>
+                      
 
                     </div>
 
                 </div>
 
 
-            </div>
+            </div >
         );
     }
 

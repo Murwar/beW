@@ -51,21 +51,22 @@ class AddNewHotel extends Component {
                                 </td>
                             </tr>
 
-                
+
 
                         </table>
 
 
 
                         <div className={'horizontal'}>
-                            <button className={'button_save_new_hotel'}>
-                                Сохранить
+                           
+                                <button className={'button_save_new_hotel'}  onClick={this.props.history.goBack}>
+                                    Сохранить
                                 </button>
-
-                            <button className={'button_cancel_new_hotel'}>
-                                Отмена
+                            
+                                <button className={'button_cancel_new_hotel'}  onClick={this.props.history.goBack}> 
+                                    Отмена
                                 </button>
-
+                          
                         </div>
 
 
