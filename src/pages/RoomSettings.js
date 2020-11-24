@@ -97,11 +97,17 @@ class RoomSettings extends Component {
                     </table>
 
                     <div className={'horizontal'}>
-                        <button className={'button_save_new_room'}  onClick={this.props.history.goBack} >
+                        <a href='/delete_room' >
+                            <button className={'button_settings_delete_room'}>
+                                Удалить номер
+                          </button>
+                        </a>
+
+                        <button className={'button_settings_save_room'} onClick={this.props.history.goBack} >
                             Сохранить
                                 </button>
 
-                        <button className={'button_cancel_new_room'}  onClick={this.props.history.goBack} >
+                        <button className={'button_settings_cancel_room'} onClick={this.props.history.goBack} >
                             Отмена
                                 </button>
 

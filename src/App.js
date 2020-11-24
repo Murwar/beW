@@ -16,6 +16,8 @@ import AddNewRoom from './pages/AddNewRoom';
 import RoomSettings from './pages/RoomSettings';
 import HotelFirst from './pages/HotelFirst';
 import HotelSecond from './pages/HotelSecond';
+import DeleteRoom from './pages/DeleteRoom';
+import DeleteHotel from './pages/DeleteHotel';
 
 
 
@@ -37,8 +39,10 @@ class App extends Component {
                         <Route path={'/settings'} component={Settings}/>
                         <Route path={'/logout'} component={Logout}/>
                         <Route path={'/add_new_hotel'} component={AddNewHotel}/>
+                        <Route path={'/delete_hotel'} component={DeleteHotel}/>
                         <Route path={'/hotel_settings'} component={HotelSettings}/>
                         <Route path={'/add_new_room'} component={AddNewRoom}/>
+                        <Route path={'/delete_room'} component={DeleteRoom}/>
                         <Route path={'/room_settings'} component={RoomSettings}/>
                         <Route path={'/hotel_first'} component={HotelFirst}/>
                         <Route path={'/hotel_second'} component={HotelSecond}/>

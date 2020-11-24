@@ -86,7 +86,7 @@ input.set_rooms {
     box-shadow: 0 4px 15px rgba(36, 219, 127, 0.842);
 }
 
-.button_delete_hotel {
+.button_delete_hotel_settings {
     width: 150px;
     height: 80px;
     margin: 20px;
@@ -104,7 +104,7 @@ input.set_rooms {
     border-radius: 20px;
 }
 
-.button_delete_hotel:hover {
+.button_delete_hotel_settings:hover {
     font-size: 16px;
     
     border-color: rgba(184, 29, 9, 0.973);

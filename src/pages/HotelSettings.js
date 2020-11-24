@@ -67,8 +67,8 @@ class HotelSettings extends Component {
 
 
                     <div className={'horizontal'}>
-                        <a href='' >
-                            <button className={'button_delete_hotel'}>
+                        <a href='/delete_hotel' >
+                            <button className={'button_delete_hotel_settings'}>
                                 Удалить объект
                           </button>
                         </a>
