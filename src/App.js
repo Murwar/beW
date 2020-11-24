@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Route, Switch} from "react-router";
 import './App.css';
-import Login from "./pages/Login/Login";
+import Login from "./pages/login/Login";
 import HomePage from "./pages/HomePage";
 
 class App extends Component {

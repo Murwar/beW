@@ -4,7 +4,7 @@
     padding: 2px 2px;
     height: 110px;
     width: 100px;
-    justify-content: start;
+    justify-content: flex-start;
     align-items: center;
     outline: 1px solid #E5E5E5;
 }

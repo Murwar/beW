@@ -1,7 +1,7 @@
 import {BrowserRouter as Router} from "react-router-dom";
 import Navbar from "../components/Navbar";
 import {Redirect, Route, Switch} from "react-router";
-import Dashboard from "./Dashboard";
+import Dashboard from "./dashboard/Dashboard";
 import ArrivalSchedule from "./ArrivalSchedule";
 import BookingSchedule from "./BookingSchedule";
 import Statistics from "./Statistics";
@@ -9,7 +9,7 @@ import Accommodations from "./Accommodations";
 import Settings from "./Settings";
 import './home_page.css'
 import React from "react";
-import isLoggedIn from "./Login/is_logged_in";
+import isLoggedIn from "./login/is_logged_in";
 
 const HomePage = ({history}) => {
     if (!isLoggedIn()) {
