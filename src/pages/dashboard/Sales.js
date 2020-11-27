@@ -4,7 +4,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import cancel from "../../resources/cards/off_outline_close.svg"
-import "./CardClients.css"
+import "./cards/cards.css"
 
 export default function Sales() {
     const [countCancel] = useState(0);
@@ -17,7 +17,7 @@ export default function Sales() {
                     <Typography className={"text_card"} gutterBottom variant="h6" component="h2">
                         {countCancel}
                     </Typography>
-                    <Typography className={"text_card"} gutterBottom variant="body2"  component="p">
+                    <Typography className={"text_card"} gutterBottom variant="body2" component="p">
                         Отмены
                     </Typography>
                 </CardContent>

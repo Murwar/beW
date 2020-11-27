@@ -3,23 +3,22 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import departures from "../../resources/cards/home_minus.svg"
-import "./CardClients.css"
+import arrivals from "../../../resources/cards/home_plus.svg"
+import "./cards.css"
 
-
-export default function CardDeparture() {
-    const [countDepartures] = useState(2);
+export default function CardArrivals() {
+    const [countArrivals] = useState(3);
 
     return (
-        <Card className={"card_departure"}>
+        <Card className={"card"} id={"card_arrivals"}>
             <CardActionArea>
-                <img className={"image_card"} src={departures} alt={"Departures"}/>
+                <img className={"image_card"} src={arrivals} alt={"Arrivals"}/>
                 <CardContent className={"card_info"}>
                     <Typography className={"text_card"} gutterBottom variant="h6" component="h2">
-                        {countDepartures}
+                        {countArrivals}
                     </Typography>
-                    <Typography className={"text_card"} gutterBottom variant="body2"  component="p">
-                        Отъезды
+                    <Typography className={"text_card"} gutterBottom variant="body2" component="p">
+                        Заезды
                     </Typography>
                 </CardContent>
             </CardActionArea>

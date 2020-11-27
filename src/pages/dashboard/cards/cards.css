@@ -1,0 +1,32 @@
+.card {
+    position: relative;
+    height: 9rem;
+    width: 9rem;
+    margin: 0 5px;
+}
+
+#card_clients {
+    grid-column: 2;
+}
+
+#card_arrivals {
+    grid-column: 4;
+}
+
+#card_departure {
+    grid-column: 6;
+}
+
+#card_cancels {
+    grid-column: 8;
+}
+
+.image_card {
+    padding-left: 35%;
+    padding-top: 8%;
+}
+
+.text_card {
+    text-align: center;
+    color: #9E9E9E;
+}

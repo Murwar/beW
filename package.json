@@ -49,7 +49,7 @@
     ]
   },
   "devDependencies": {
-    "@material-ui/core": "^4.11.0",
+    "@material-ui/core": "^4.11.1",
     "semantic-ui-react": "^2.0.1"
   }
 }

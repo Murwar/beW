@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
-import Calendar from "./Calendar";
-import CardClients from "./CardClients";
-import CardArrivals from "./CardArrivals";
-import CardDeparture from "./CardDeparture";
-import CardCancel from "./CardCancel";
+import Calendar from "./calendar/Calendar";
+import CardClients from "./cards/CardClients";
+import CardArrivals from "./cards/CardArrivals";
+import CardDeparture from "./cards/CardDeparture";
+import CardCancel from "./cards/CardCancel";
 
 class Dashboard extends Component {
     render() {

@@ -36,9 +36,9 @@
     background-color: #2196F3;
 }
 
-.nice-dates-day.-wide:before, .nice-dates-day.-wide:after {
-    left: 50%;
-    right: 0;
-    top: 30%;
-    bottom: 30%;
+.nice-dates-day:before, .nice-dates-day:after {
+    left: 10%;
+    right: -20%;
+    top: 10%;
+    bottom: 10%;
 }
