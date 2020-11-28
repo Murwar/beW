@@ -7,12 +7,12 @@ export default createMuiTheme({
                 color: "#9E9E9E",
 
                 "&:hover": {
-                    backgroundColor: "rgba(33,150,243,0.44)",
+                    backgroundColor: "#E3F2FD",
                     color: "#2E3A59"
                 },
 
                 "&:focus": {
-                    backgroundColor: "#2196F3",
+                    backgroundColor: "rgba(33,150,243,0.44)",
                     color: "#2E3A59"
                 }
             }
