@@ -14,15 +14,21 @@ const handleLogout = history => () => {
 
 const Navbar = ({history}) => {
     const [sidebar, setSidebar] = useState(false);
+    const [selectedIndex, setSelectedIndex] = useState(0);
+    const [guestHouse] = useState("web guest house");
+
     const showSidebar = () => setSidebar(!sidebar);
 
     return (
+        //проверяем свернут или открыт sidebar
+        //если закрыт, то отрисовываем аватар и стрелочку вправа
+        // если открыт, то аватар, стрелочку влево, название текущего гостевого дома
         <nav className={'sidebar'}>
             <IconContext.Provider value={{color: '#fffff'}}>
                 {sidebar ?
                     <div className="navbar active">
                         <img src={avatar} alt={"Avatar"}/>
-                        <span className={'title_accommodation'}>web guest house</span>
+                        <span className={'title_accommodation'}>{guestHouse}</span>
 
                         <Link to="#" className="menu-bars active">
                             <IoIcons.IoMdArrowDropleft onClick={showSidebar}/>
@@ -39,6 +45,7 @@ const Navbar = ({history}) => {
 
 
                 {sidebar ?
+                    //отрисовываем все элементы sidebar. если открыто, то вписываем название пункта. нет - только иконку
                     <div className={'navmenu active'}>
                         {SidebarConstants.map((item, index) => {
                             return (
@@ -52,7 +59,12 @@ const Navbar = ({history}) => {
                                             </Link>
                                         </li>
                                         :
-                                        <li key={index} className={item.cName + ' active'}>
+                                        <li onClick={() => setSelectedIndex(index)} key={index}
+                                            className={item.cName + ' active'}
+                                            style={selectedIndex === index ? {
+                                                backgroundColor: "rgba(33,150,243,0.44)",
+                                                borderRadius: "5px"
+                                            } : {}}>
                                             <Link to={item.path}>
                                                 {item.icon}
                                                 <span>{item.title}</span>
@@ -84,7 +96,11 @@ const Navbar = ({history}) => {
                                                 {item.icon}
                                             </Link>
                                         </li> :
-                                        <li key={index} className={item.cName}>
+                                        <li onClick={() => setSelectedIndex(index)} key={index} className={item.cName}
+                                            style={selectedIndex === index ? {
+                                                backgroundColor: "rgba(33,150,243,0.44)",
+                                                borderRadius: "5px"
+                                            } : {}}>
                                             <Link to={item.path}>
                                                 {item.icon}
                                             </Link>

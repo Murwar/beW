@@ -1,5 +1,6 @@
-.card {
+.card{
     position: relative;
+    display: inline-block;
     height: 9rem;
     width: 9rem;
     margin: 0 5px;
@@ -21,12 +22,29 @@
     grid-column: 8;
 }
 
-.image_card {
+.image_card_dark {
+    display: none;
     padding-left: 35%;
     padding-top: 8%;
+    z-index: 99;
+}
+.image_card{
+    padding-left: 35%;
+    padding-top: 8%;
+}
+.card:hover .image_card_dark{
+    display: inline;
+}
+.card:hover .image_card{
+    display: none;
+}
+.card:focus-within .image_card_dark{
+    display: inline;
+}
+.card:focus-within .image_card{
+    display: none;
 }
 
 .text_card {
     text-align: center;
-    color: #9E9E9E;
 }

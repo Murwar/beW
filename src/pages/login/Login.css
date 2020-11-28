@@ -11,7 +11,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 40px;
 }
 
 .login_btn {
@@ -30,7 +29,7 @@
 }
 
 .label {
-    padding-left: 20%;
+    padding-left: 5%;
 }
 
 @media (min-width: 650px ) {
