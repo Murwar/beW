@@ -3,7 +3,7 @@
     background-color: #ffffff;
     padding: 2px 2px;
     height: 110px;
-    width: 100px;
+    width: 110px;
     justify-content: flex-start;
     align-items: center;
     outline: 1px solid #E5E5E5;
@@ -46,7 +46,7 @@
 }
 
 .navmenu.nonactive {
-    width: 100%;
+    width: 110px;
 }
 
 .navmenu.active {
@@ -88,6 +88,7 @@ span {
 }
 
 .Avatar {
+    margin-left: 0.5rem;
     background-image: url(../resources/images/avatar.png);
 }
 

@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import './Login.css';
+import React, {useState} from 'react';
+import './login.css';
 import desktopImage from '../../resources/images/login_b.png';
 import mobileImage from '../../resources/images/login_s.png';
 import label from '../../resources/images/label.png';
@@ -8,6 +8,7 @@ import Card from "semantic-ui-react/dist/commonjs/views/Card";
 import {Redirect} from "react-router";
 import store from 'store';
 import isLoggedIn from "./is_logged_in";
+import useWindowWidth from "../WindowWidth";
 
 const Login = (props) => {
     store.set('loggedIn', false);
@@ -59,20 +60,5 @@ const Login = (props) => {
         </div>
     )
 }
-
-const useWindowWidth = () => {
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-    useEffect(() => {
-        const handleWindowResize = () => {
-            setWindowWidth(window.innerWidth);
-        };
-
-        window.addEventListener('resize', handleWindowResize);
-        return () => window.removeEventListener('resize', handleWindowResize);
-    }, []);
-
-    return windowWidth;
-};
 
 export default Login;

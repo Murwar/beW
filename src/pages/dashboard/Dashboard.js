@@ -4,6 +4,7 @@ import CardClients from "./cards/CardClients";
 import CardArrivals from "./cards/CardArrivals";
 import CardDeparture from "./cards/CardDeparture";
 import CardCancel from "./cards/CardCancel";
+import ProceedsGraph from "./proceeds/ProceedsGraph";
 
 class Dashboard extends Component {
     render() {
@@ -15,6 +16,7 @@ class Dashboard extends Component {
                     <CardDeparture/>
                     <CardCancel/>
                 </div>
+                <ProceedsGraph/>
                 <Calendar/>
             </div>
         );

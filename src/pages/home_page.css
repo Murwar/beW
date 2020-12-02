@@ -20,12 +20,13 @@
     font-size: 3rem;
 }
 
-.page{
+.page {
     display: grid;
     grid-template-columns: repeat(15, 1fr);
     grid-auto-rows: minmax(100px, auto);
 }
-.sidebar{
+
+.sidebar {
     position: relative;
     grid-column-start: 1;
     grid-column-end: 2;
@@ -33,12 +34,24 @@
     grid-row-end: 6;
 }
 
-.calendar{
+.calendar {
     position: relative;
     grid-row: 1;
     grid-column: 16;
     margin-top: 1rem;
+    margin-right: 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
 }
+
+.proceeds {
+    display: grid;
+    position: inherit;
+    grid-template-columns: repeat(7, 1fr);
+    grid-row: 2;
+    grid-column: 2;
+}
+
 .dashboard {
     display: grid;
     grid-column-start: 2;
@@ -48,7 +61,7 @@
     height: 100vh;
 }
 
-.cards{
+.cards {
     display: grid;
     position: inherit;
     grid-column-start: 2;

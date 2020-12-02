@@ -1,4 +1,4 @@
-.card{
+.card {
     position: relative;
     display: inline-block;
     height: 9rem;
@@ -24,24 +24,29 @@
 
 .image_card_dark {
     display: none;
-    padding-left: 35%;
+    padding-left: 33%;
     padding-top: 8%;
     z-index: 99;
 }
-.image_card{
-    padding-left: 35%;
+
+.image_card {
+    padding-left: 33%;
     padding-top: 8%;
 }
-.card:hover .image_card_dark{
+
+.card:hover .image_card_dark {
     display: inline;
 }
-.card:hover .image_card{
+
+.card:hover .image_card {
     display: none;
 }
-.card:focus-within .image_card_dark{
+
+.card:focus-within .image_card_dark {
     display: inline;
 }
-.card:focus-within .image_card{
+
+.card:focus-within .image_card {
     display: none;
 }
 

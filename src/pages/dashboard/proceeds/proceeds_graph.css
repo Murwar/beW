@@ -1,0 +1,44 @@
+.proceeds_graph {
+    position: inherit;
+    height: 25rem;
+    grid-row: 1;
+    grid-column-start: 4;
+    margin: 0 2rem;
+    padding: 1rem;
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.proceeds_title {
+    color: #2E3A59;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 2.5rem;
+}
+
+.rv-crosshair__inner__content {
+    background: #FFBD12;
+    color: #2E3A59;
+}
+
+.rv-crosshair__line {
+    background: #FFBD12;
+}
+
+.rv-xy-plot__axis__line {
+    stroke: #E5E5E5
+}
+
+.rv-xy-plot__axis__tick__line {
+    stroke: #E5E5E5
+}
+
+.rv-xy-plot__axis__tick__text {
+    fill: #9E9E9E;
+    font-size: 10.6px;
+}
+
+.rv-xy-plot__grid-lines__line {
+    stroke: #E5E5E5
+}

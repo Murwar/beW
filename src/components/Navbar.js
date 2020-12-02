@@ -27,7 +27,7 @@ const Navbar = ({history}) => {
             <IconContext.Provider value={{color: '#fffff'}}>
                 {sidebar ?
                     <div className="navbar active">
-                        <img src={avatar} alt={"Avatar"}/>
+                        <img src={avatar} alt={"Avatar"} className={'Avatar'}/>
                         <span className={'title_accommodation'}>{guestHouse}</span>
 
                         <Link to="#" className="menu-bars active">
@@ -36,7 +36,7 @@ const Navbar = ({history}) => {
                     </div>
                     :
                     <div className="navbar">
-                        <img src={avatar} alt={"Avatar"}/>
+                        <img src={avatar} alt={"Avatar"} className={'Avatar'}/>
                         <Link to="#" className="menu-bars">
                             <IoIcons.IoMdArrowDropright onClick={showSidebar}/>
                         </Link>
