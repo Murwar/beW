@@ -5,6 +5,8 @@ import CardArrivals from "./cards/CardArrivals";
 import CardDeparture from "./cards/CardDeparture";
 import CardCancel from "./cards/CardCancel";
 import ProceedsGraph from "./proceeds/ProceedsGraph";
+import VisitsGraph from "./visits/VisitsGraph";
+import ArrivalsGraph from "./arrivals_graph/ArrivalsGraph";
 
 class Dashboard extends Component {
     render() {
@@ -18,6 +20,8 @@ class Dashboard extends Component {
                 </div>
                 <ProceedsGraph/>
                 <Calendar/>
+                <VisitsGraph/>
+                <ArrivalsGraph/>
             </div>
         );
     }
