@@ -20,6 +20,7 @@ export default function ProceedsGraph() {
             <div className={"proceeds_graph"}>
                 <p className={"proceeds_title"}>Продажи</p>
                 <XYPlot
+                    xType="ordinal"
                     onMouseLeave={() => setCrosshairValues([])}
                     width={useWindowWidth() >= 1161 ? 885 : 610} height={300}>
                     <HorizontalGridLines/>
@@ -29,10 +30,11 @@ export default function ProceedsGraph() {
                         orientation="bottom"
                         tickSize={0}
                         tickFormat={function tickFormat(x) {
-                            let c = new Date();
-                            c.setDate(x);
-                            return c.toLocaleDateString().substring(0, 5)
+                            return new Date(Date.parse(x)).toLocaleDateString().substring(0, 2);
                         }}
+                        title={
+                            new Date(Date.parse(DATA[0][0].x)).toLocaleDateString('default', {month: 'long'})
+                        }
                     />
                     <YAxis
                         attr="y"
@@ -50,7 +52,7 @@ export default function ProceedsGraph() {
                         strokeStyle="solid"
                         style={{}}/>
                     <Crosshair values={crosshairValues} titleFormat={(d) => ({
-                        title: 'Дата', value: new Date(2020, 11, d[0].x).toLocaleDateString()
+                        title: 'Дата', value: new Date(Date.parse(d[0].x)).toLocaleDateString()
                     })} itemsFormat={(d) => [{title: 'Выручка', value: d[0].y}]}/>
                 </XYPlot>
             </div>
