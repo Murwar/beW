@@ -1,0 +1,65 @@
+.dashboard {
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 16;
+    grid-row-start: 1;
+    grid-row-end: 6;
+    height: 100vh;
+    margin: 1rem;
+    justify-items: end;
+}
+
+.left_column {
+    display: grid;
+    position: inherit;
+    grid-column: 1;
+    grid-row: 1;
+    max-height: 20rem;
+    max-width: 920px;
+}
+
+.box_info {
+    grid-column: 1;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    margin-top: 1rem;
+    border: 1px solid #E5E5E5;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    color: #2e3a59;
+    height: 10.5rem;
+    overflow: auto;
+}
+
+.proceeds {
+    display: grid;
+    position: inherit;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 20.5rem;
+    grid-row: 1;
+    grid-column-start: 1;
+    max-width: 920px;
+}
+
+.right_column {
+    position: relative;
+    grid-row: 1;
+    grid-column: 2;
+    margin-right: 2rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    justify-self: end;
+}
+
+.calendar {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    border-radius: 3px;
+}
+
+.visits {
+    width: 310px;
+}
+
+.arrivals {
+    width: 310px;
+}

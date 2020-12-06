@@ -1,10 +1,11 @@
 .proceeds_graph {
     position: inherit;
-    height: 25rem;
+    height:21rem;
     grid-row: 1;
-    grid-column-start: 4;
-    margin: 1rem 2rem;
-    padding: 1rem;
+    grid-column-start: 1;
+    margin: 1rem 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
     border: 1px solid #E5E5E5;
     border-radius: 3px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);

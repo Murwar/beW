@@ -18,7 +18,7 @@ export default function ProceedsGraph() {
     return (
         <div className={"proceeds"}>
             <div className={"proceeds_graph"}>
-                <p className={"proceeds_title"}>Продажи</p>
+                <a className={"proceeds_title"}>Продажи</a>
                 <XYPlot
                     xType="ordinal"
                     onMouseLeave={() => setCrosshairValues([])}

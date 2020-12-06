@@ -10,13 +10,13 @@ import "./cards.css";
 import theme from "./theme";
 import {ThemeProvider} from "@material-ui/core";
 
-export default function CardArrivals() {
+export default function CardArrivals(props) {
     const [countArrivals] = useState(3);
 
     return (
         <ThemeProvider theme={theme}>
         <Card className={"card"} id={"card_arrivals"}>
-            <CardActionArea>
+            <CardActionArea onClick={() => { props.updateStatus(1)}}>
                 <img className={"image_card"} src={arrivals} alt={"Arrivals"}/>
                 <img className={"image_card_dark"} src={arrivals_dark} alt={"Arrivals_dark"}/>
 

@@ -7,12 +7,12 @@ import cancel from "../../../resources/cards/off_outline_close.svg"
 import cancel_dark from "../../../resources/cards/off_outline_close_dark.svg"
 import "./cards.css"
 
-export default function CardCancel() {
+export default function CardCancel(props) {
     const [countCancel] = useState(0);
 
     return (
         <Card className={"card"} id={"card_cancels"}>
-            <CardActionArea>
+            <CardActionArea onClick={() => { props.updateStatus(3)}}>
                 <img className={"image_card"} src={cancel} alt={"Cancels"}/>
                 <img className={"image_card_dark"} src={cancel_dark} alt={"Cancels Dark"}/>
 

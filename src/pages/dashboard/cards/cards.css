@@ -1,25 +1,27 @@
 .card {
     position: relative;
-    display: inline-block;
     height: 9rem;
     width: 9rem;
-    margin: 0 5px;
 }
 
 #card_clients {
-    grid-column: 2;
+    grid-column: 1;
+    justify-self: center;
 }
 
 #card_arrivals {
-    grid-column: 4;
+    grid-column: 2;
+    justify-self: center;
 }
 
 #card_departure {
-    grid-column: 6;
+    grid-column: 3;
+    justify-self: center;
 }
 
 #card_cancels {
-    grid-column: 8;
+    grid-column: 4;
+    justify-self: center;
 }
 
 .image_card_dark {

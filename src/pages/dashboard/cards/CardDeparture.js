@@ -7,12 +7,12 @@ import departures from "../../../resources/cards/home_minus.svg"
 import departures_dark from "../../../resources/cards/home_minus_dark.svg"
 import "./cards.css"
 
-export default function CardDeparture() {
+export default function CardDeparture(props) {
     const [countDepartures] = useState(2);
 
     return (
         <Card className={"card"} id={"card_departure"}>
-            <CardActionArea>
+            <CardActionArea onClick={() => { props.updateStatus(2)}}>
                 <img className={"image_card"} src={departures} alt={"Departures"}/>
                 <img className={"image_card_dark"} src={departures_dark} alt={"Departures Dark"}/>
 
