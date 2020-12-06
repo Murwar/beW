@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -9,27 +9,33 @@ import arrivals_dark from "../../../resources/cards/home_plus_dark.svg"
 import "./cards.css";
 import theme from "./theme";
 import {ThemeProvider} from "@material-ui/core";
+import {DATA} from "../box_info/clients_data";
 
 export default function CardArrivals(props) {
-    const [countArrivals] = useState(3);
+    const [countArrivals, setCountArrivals] = useState(DATA[1].length);
+    useEffect(() => {
+        setCountArrivals(DATA[1].length);
+    })
 
     return (
         <ThemeProvider theme={theme}>
-        <Card className={"card"} id={"card_arrivals"}>
-            <CardActionArea onClick={() => { props.updateStatus(1)}}>
-                <img className={"image_card"} src={arrivals} alt={"Arrivals"}/>
-                <img className={"image_card_dark"} src={arrivals_dark} alt={"Arrivals_dark"}/>
+            <Card className={"card"} id={"card_arrivals"}>
+                <CardActionArea onClick={() => {
+                    props.updateStatus(1)
+                }}>
+                    <img className={"image_card"} src={arrivals} alt={"Arrivals"}/>
+                    <img className={"image_card_dark"} src={arrivals_dark} alt={"Arrivals_dark"}/>
 
-                <CardContent className={"card_info"} color={'black'}>
-                    <Typography className={"text_card"} gutterBottom variant="h6" component="h2">
-                        {countArrivals}
-                    </Typography>
-                    <Typography className={"text_card"} gutterBottom variant="body2" component="p">
-                        Заезды
-                    </Typography>
-                </CardContent>
-            </CardActionArea>
-        </Card>
+                    <CardContent className={"card_info"} color={'black'}>
+                        <Typography className={"text_card"} gutterBottom variant="h6" component="h2">
+                            {countArrivals}
+                        </Typography>
+                        <Typography className={"text_card"} gutterBottom variant="body2" component="p">
+                            Заезды
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
+            </Card>
         </ThemeProvider>
     );
 }

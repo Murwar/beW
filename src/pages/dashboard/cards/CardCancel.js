@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -6,13 +6,19 @@ import Typography from '@material-ui/core/Typography';
 import cancel from "../../../resources/cards/off_outline_close.svg"
 import cancel_dark from "../../../resources/cards/off_outline_close_dark.svg"
 import "./cards.css"
+import {DATA} from "../box_info/clients_data";
 
 export default function CardCancel(props) {
-    const [countCancel] = useState(0);
+    const [countCancel, setCountCancel] = useState(DATA[3].length);
+    useEffect(() => {
+        setCountCancel(DATA[3].length);
+    })
 
     return (
         <Card className={"card"} id={"card_cancels"}>
-            <CardActionArea onClick={() => { props.updateStatus(3)}}>
+            <CardActionArea onClick={() => {
+                props.updateStatus(3)
+            }}>
                 <img className={"image_card"} src={cancel} alt={"Cancels"}/>
                 <img className={"image_card_dark"} src={cancel_dark} alt={"Cancels Dark"}/>
 

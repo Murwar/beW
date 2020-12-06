@@ -12,11 +12,12 @@ import './dashboard.css'
 
 class Dashboard extends Component {
     state = {
-        cardStatus: 0
+        cardStatus: 1
     }
     updateStatus = (value) => {
-        this.setState({ cardStatus: value })
+        this.setState({cardStatus: value})
     }
+
     render() {
         return (
             <div className='dashboard'>

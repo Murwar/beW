@@ -1,4 +1,3 @@
-import avatar3 from "../../../resources/clients_image/Avatar3.png";
 export const DATA = [
     [
         {
@@ -7,7 +6,6 @@ export const DATA = [
             peopleNumber: 2,
             phoneNumber: "+79136541333",
             mail: "nastya@book.com",
-            image: avatar3,
             status: "Проживание"
         }],
     [{
@@ -31,7 +29,8 @@ export const DATA = [
         phoneNumber: "+79096541123",
         mail: " yulya@book.com",
         status: "Заезд"
-    }], [
+    },
+    ], [
         {
             name: "Протопоп Протопопович",
             category: "Полулюкс",
@@ -39,14 +38,12 @@ export const DATA = [
             phoneNumber: "+79887779999",
             mail: "pro_to_pop@book.com",
             status: "Выезд"
-        }], [
-        {
+        }, {
             name: "Виктор Дробыш",
             category: "Стандартный",
             peopleNumber: 2,
             phoneNumber: "+79246441333",
             mail: "viktor@book.com",
-            status: "Отмена"
-        }
-    ]
+            status: "Выезд"
+        }], [],
 ]
