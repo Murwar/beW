@@ -22,10 +22,10 @@ class Dashboard extends Component {
         return (
             <div className='dashboard'>
                 <div className={"left_column"}>
-                    <CardClients updateStatus={this.updateStatus}/>
-                    <CardArrivals updateStatus={this.updateStatus}/>
-                    <CardDeparture updateStatus={this.updateStatus}/>
-                    <CardCancel updateStatus={this.updateStatus}/>
+                    <CardClients status={this.state.cardStatus} updateStatus={this.updateStatus}/>
+                    <CardArrivals status={this.state.cardStatus} updateStatus={this.updateStatus}/>
+                    <CardDeparture status={this.state.cardStatus} updateStatus={this.updateStatus}/>
+                    <CardCancel status={this.state.cardStatus} updateStatus={this.updateStatus}/>
                     <BoxInfo status={this.state.cardStatus}/>
                 </div>
                 <ProceedsGraph/>

@@ -8,7 +8,7 @@ export default createMuiTheme({
 
                 "&:hover": {
                     backgroundColor: "#E3F2FD",
-                    color: "#2E3A59"
+                    color: "#9E9E9E"
                 },
 
                 "&:focus": {

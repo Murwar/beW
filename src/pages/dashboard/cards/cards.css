@@ -25,31 +25,13 @@
 }
 
 .image_card_dark {
-    display: none;
     padding-left: 33%;
     padding-top: 8%;
-    z-index: 99;
 }
 
 .image_card {
     padding-left: 33%;
     padding-top: 8%;
-}
-
-.card:hover .image_card_dark {
-    display: inline;
-}
-
-.card:hover .image_card {
-    display: none;
-}
-
-.card:focus-within .image_card_dark {
-    display: inline;
-}
-
-.card:focus-within .image_card {
-    display: none;
 }
 
 .text_card {

@@ -10,6 +10,7 @@ import "./cards.css";
 import theme from "./theme";
 import {ThemeProvider} from "@material-ui/core";
 import {DATA} from "../box_info/clients_data";
+import makeStyles from "@material-ui/core/styles/makeStyles";
 
 export default function CardArrivals(props) {
     const [countArrivals, setCountArrivals] = useState(DATA[1].length);
@@ -17,14 +18,27 @@ export default function CardArrivals(props) {
         setCountArrivals(DATA[1].length);
     })
 
+    const useStyles = makeStyles(({
+        selected: {
+            backgroundColor: "rgba(33,150,243,0.44)",
+            color: "#2E3A59"
+        }
+    }));
+
+
+    const classes = useStyles();
     return (
         <ThemeProvider theme={theme}>
             <Card className={"card"} id={"card_arrivals"}>
-                <CardActionArea onClick={() => {
-                    props.updateStatus(1)
+                <CardActionArea className={props.status === 1 ? classes.selected : {}} onClick={() => {
+                    props.updateStatus(1);
                 }}>
-                    <img className={"image_card"} src={arrivals} alt={"Arrivals"}/>
-                    <img className={"image_card_dark"} src={arrivals_dark} alt={"Arrivals_dark"}/>
+                    {props.status === 1 ?
+                        <img className="image_card_dark"
+                             src={arrivals_dark} alt={"arrivals_dark"}/>
+                        :
+                        <img className={"image_card"} src={arrivals} alt={"Arrivals"}/>
+                    }
 
                     <CardContent className={"card_info"} color={'black'}>
                         <Typography className={"text_card"} gutterBottom variant="h6" component="h2">
