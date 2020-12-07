@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Link from "react-router-dom/Link";
 import * as IoIcons from 'react-icons/io';
 import {SidebarConstants} from "../constants";
@@ -17,7 +17,22 @@ const Navbar = ({history}) => {
     const [selectedIndex, setSelectedIndex] = useState(0);
     const [guestHouse] = useState("web guest house");
 
-    const showSidebar = () => setSidebar(!sidebar);
+    function setSelectedIdx(option) {
+        localStorage.setItem('SelectedIndex', option);
+        setSelectedIndex(option);
+    }
+
+    function setSelectedSidebar(option) {
+        localStorage.setItem('SelectedSidebar', option);
+        setSidebar(option);
+    }
+
+    useEffect(() => {
+        setSelectedIdx(localStorage.getItem('SelectedIndex') | 0);
+        setSelectedSidebar(localStorage.getItem('SelectedSidebar') | false);
+    })
+
+    const showSidebar = () => setSelectedSidebar(!localStorage.getItem('SelectedSidebar') | !sidebar);
 
     return (
         //проверяем свернут или открыт sidebar
@@ -59,7 +74,9 @@ const Navbar = ({history}) => {
                                             </Link>
                                         </li>
                                         :
-                                        <li onClick={() => setSelectedIndex(index)} key={index}
+                                        <li onClick={() => {
+                                            setSelectedIdx(index);
+                                        }} key={index}
                                             className={item.cName + ' active'}
                                             style={selectedIndex === index ? {
                                                 backgroundColor: "rgba(33,150,243,0.44)",
@@ -96,7 +113,9 @@ const Navbar = ({history}) => {
                                                 {item.icon}
                                             </Link>
                                         </li> :
-                                        <li onClick={() => setSelectedIndex(index)} key={index} className={item.cName}
+                                        <li onClick={() => {
+                                            setSelectedIdx(index);
+                                        }} key={index} className={item.cName}
                                             style={selectedIndex === index ? {
                                                 backgroundColor: "rgba(33,150,243,0.44)",
                                                 borderRadius: "5px"
