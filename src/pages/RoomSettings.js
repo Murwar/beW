@@ -31,11 +31,11 @@ class RoomSettings extends Component {
 
                             <td  >
                                 <select name="category" required className={'input_rooms_select'} >
-                                    <option selected="selected">первое</option>
-                                    <option >второе</option>
-                                    <option >3</option>
-                                    <option >4</option>
-                                    <option >5</option>
+                                    <option selected="selected">стандарт</option>
+                                    <option >сингл</option>
+                                    <option >дабл</option>
+                                    <option >люкс</option>
+                                    <option >апартаменты</option>
                                 </select>
                             </td>
                         </tr>
@@ -48,8 +48,8 @@ class RoomSettings extends Component {
 
                             <td>
                                 <select name="category" required className={'input_rooms_select'} >
-                                    <option selected="selected">первое</option>
-                                    <option >второе</option>
+                                    <option selected="selected">1</option>
+                                    <option >2</option>
                                     <option >3</option>
                                     <option >4</option>
                                     <option >5</option>
@@ -64,11 +64,11 @@ class RoomSettings extends Component {
 
                             <td>
                                 <select name="category" required className={'input_rooms_select'} >
-                                    <option selected="selected">первое</option>
-                                    <option >второе</option>
-                                    <option >3</option>
-                                    <option >4</option>
-                                    <option >5</option>
+                                    <option selected="selected">нет</option>
+                                    <option >дети</option>
+                                    <option >животные</option>
+                                    <option >курение</option>
+                                    <option >шум</option>
                                 </select>
                             </td>
                         </tr>
