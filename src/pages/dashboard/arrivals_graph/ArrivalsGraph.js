@@ -12,7 +12,7 @@ export default function ArrivalsGraph() {
     return (
         <div className={"arrivals"}>
             <div className={"bar_graph"}>
-                <a className={"bar_graph_title"}>Заселения</a>
+                <p className={"bar_graph_title"}>Заселения</p>
                 <XYPlot
                     onMouseLeave={() => setCrosshairValues([])}
                     width={290} height={150}

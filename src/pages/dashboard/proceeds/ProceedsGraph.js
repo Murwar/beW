@@ -22,7 +22,7 @@ export default function ProceedsGraph() {
                 <XYPlot
                     xType="ordinal"
                     onMouseLeave={() => setCrosshairValues([])}
-                    width={useWindowWidth() >= 1161 ? 885 : 610} height={300}>
+                    width={useWindowWidth() >= 1161 ? 885 : 610} height={250}>
                     <HorizontalGridLines/>
                     <XAxis
                         attr="x"

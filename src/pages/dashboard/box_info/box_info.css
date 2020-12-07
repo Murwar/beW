@@ -24,11 +24,16 @@
 
 .empty_box {
     display: flex;
-    margin-top: 2.5rem;
+    justify-content: center;
     letter-spacing: 0.5px;
     font-weight: lighter;
     font-size: 20px;
-    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.box_cat {
+    display: block;
+    margin: auto;
 }
 
 .client_name {

@@ -14,7 +14,7 @@
     position: inherit;
     grid-column: 1;
     grid-row: 1;
-    max-height: 20rem;
+    max-height: 24.5rem;
     max-width: 920px;
 }
 
@@ -27,7 +27,7 @@
     border-radius: 3px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     color: #2e3a59;
-    height: 10.5rem;
+    height: 14.5rem;
     overflow: auto;
 }
 
