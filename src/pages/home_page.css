@@ -21,6 +21,7 @@
 
 .page {
     display: grid;
+    height: 100%;
     grid-template-columns: repeat(15, 1fr);
     grid-auto-rows: minmax(100px, auto);
 }
@@ -29,5 +30,5 @@
     position: relative;
     grid-column: 1;
     grid-row-start: 1;
-    grid-row-end: 5;
+    grid-row-end: inherit;
 }

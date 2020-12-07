@@ -1,7 +1,8 @@
-.deleteRoom {
-    background-color: whitesmoke;
-    width: 100%;
-    height: 100%;
+.delete_room {
+    grid-column-start: 2;
+    grid-column-end: 16;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .title_delete_room {
@@ -18,8 +19,7 @@
 .rectangle_delete_room {
     width: 1000px;
     height: 800px;
-    margin-left: 350px;
-    margin-top: 80px;
+    margin-top: 4rem;
     background: white;
     border-radius: 20px;
     border-style: solid;

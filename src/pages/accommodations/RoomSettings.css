@@ -1,6 +1,8 @@
 .settingsRoom {
-    width: 100%;
-    height: 100%;
+    grid-column-start: 2;
+    grid-column-end: 16;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .set_room_title {
@@ -14,12 +16,10 @@
     color: #000000;
 }
 
-
-
 .button_settings_delete_room {
     width: 150px;
     height: 80px;
-        
+
     margin-left: 175px;
 
     letter-spacing: 1.20px;
@@ -34,16 +34,16 @@
 
 .button_settings_delete_room:hover {
     font-size: 16px;
-    
+
     border-color: rgba(184, 29, 9, 0.973);
     background: rgba(248, 51, 25, 0.973);
     box-shadow: 0 4px 15px rgba(240, 57, 37, 0.973);;
 }
 
-.button_settings_save_room{
+.button_settings_save_room {
     width: 150px;
     height: 80px;
-    
+
     margin-left: 100px;
 
 
@@ -69,8 +69,8 @@
 .button_settings_cancel_room {
     width: 150px;
     height: 80px;
-    
-    
+
+
     margin-left: 100px;
 
 

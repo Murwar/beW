@@ -1,7 +1,6 @@
 .accommodations {
     grid-column-start: 2;
     grid-column-end: 16;
-    height: 100vh;
     margin-left: auto;
     margin-right: auto;
 }
@@ -125,8 +124,6 @@
 
 }
 
-
 .button_link {
-
     margin-top: 0px;
 }

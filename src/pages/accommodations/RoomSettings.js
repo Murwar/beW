@@ -10,7 +10,7 @@ class RoomSettings extends Component {
 
                     <table>
                         <tr >
-                            <td colspan="2" >
+                            <td colSpan="2" >
                                 <h1 className={'set_room_title'} >  Настройка номера</h1>
                             </td>
                         </tr>
