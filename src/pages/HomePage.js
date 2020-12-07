@@ -5,19 +5,19 @@ import Dashboard from "./dashboard/Dashboard";
 import ArrivalSchedule from "./ArrivalSchedule";
 import BookingSchedule from "./BookingSchedule";
 import Statistics from "./Statistics";
-import Accommodations from "./Accommodations";
+import Accommodations from "./accommodations/Accommodations";
 import Settings from "./Settings";
 import './home_page.css'
 import React from "react";
 import isLoggedIn from "./login/is_logged_in";
-import AddNewHotel from "./AddNewHotel";
-import DeleteHotel from "./DeleteHotel";
-import HotelSettings from "./HotelSettings";
-import AddNewRoom from "./AddNewRoom";
-import DeleteRoom from "./DeleteRoom";
-import RoomSettings from "./RoomSettings";
-import HotelFirst from "./HotelFirst";
-import HotelSecond from "./HotelSecond";
+import AddNewHotel from "./accommodations/AddNewHotel";
+import DeleteHotel from "./accommodations/DeleteHotel";
+import HotelSettings from "./accommodations/HotelSettings";
+import AddNewRoom from "./accommodations/AddNewRoom";
+import DeleteRoom from "./accommodations/DeleteRoom";
+import RoomSettings from "./accommodations/RoomSettings";
+import HotelFirst from "./accommodations/HotelFirst";
+import HotelSecond from "./accommodations/HotelSecond";
 
 const HomePage = ({history}) => {
     if (!isLoggedIn()) {

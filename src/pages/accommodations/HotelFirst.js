@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 
-import room1 from '../resources/images/room1.jpg'
-import room2 from '../resources/images/room2.jpg'
-import room3 from '../resources/images/room3.jpg'
+import room1 from '../../resources/images/room1.jpg'
+import room2 from '../../resources/images/room2.jpg'
+import room3 from '../../resources/images/room3.jpg'
 
 
 import './Hotel.css';
