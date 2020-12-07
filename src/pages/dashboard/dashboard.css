@@ -31,7 +31,7 @@
     overflow: auto;
 }
 
-.proceeds {
+.dashboard_proceeds {
     display: grid;
     position: inherit;
     grid-template-columns: repeat(1, 1fr);

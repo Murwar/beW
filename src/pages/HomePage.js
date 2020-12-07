@@ -2,11 +2,11 @@ import {BrowserRouter as Router} from "react-router-dom";
 import Navbar from "../components/Navbar";
 import {Redirect, Route, Switch} from "react-router";
 import Dashboard from "./dashboard/Dashboard";
-import ArrivalSchedule from "./ArrivalSchedule";
-import BookingSchedule from "./BookingSchedule";
-import Statistics from "./Statistics";
+import ArrivalSchedule from "./calendar/ArrivalSchedule";
+import BookingSchedule from "./calendar/BookingSchedule";
+import Statistics from "./statistics/Statistics";
 import Accommodations from "./accommodations/Accommodations";
-import Settings from "./Settings";
+import Settings from "./calendar/Settings";
 import './home_page.css'
 import React from "react";
 import isLoggedIn from "./login/is_logged_in";

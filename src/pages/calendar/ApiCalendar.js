@@ -1,4 +1,5 @@
 import moment from "moment";
+
 const Config = require("./apiGoogleconfig.json");
 
 class ApiCalendar {
@@ -19,11 +20,11 @@ class ApiCalendar {
             this.onLoad = this.onLoad.bind(this);
             this.setCalendar = this.setCalendar.bind(this);
             this.handleClientLoad();
-        }
-        catch (e) {
+        } catch (e) {
             console.log(e);
         }
     }
+
     /**
      * Update connection status.
      * @param {boolean} isSignedIn
@@ -31,6 +32,7 @@ class ApiCalendar {
     updateSigninStatus(isSignedIn) {
         this.sign = isSignedIn;
     }
+
     /**
      * Auth to the google Api.
      */
@@ -38,18 +40,19 @@ class ApiCalendar {
         this.gapi = window['gapi'];
         this.gapi.client.init(Config)
             .then(() => {
-            // Listen for sign-in state changes.
-            this.gapi.auth2.getAuthInstance().isSignedIn.listen(this.updateSigninStatus);
-            // Handle the initial sign-in state.
-            this.updateSigninStatus(this.gapi.auth2.getAuthInstance().isSignedIn.get());
-            if (this.onLoadCallback) {
-                this.onLoadCallback();
-            }
-        })
+                // Listen for sign-in state changes.
+                this.gapi.auth2.getAuthInstance().isSignedIn.listen(this.updateSigninStatus);
+                // Handle the initial sign-in state.
+                this.updateSigninStatus(this.gapi.auth2.getAuthInstance().isSignedIn.get());
+                if (this.onLoadCallback) {
+                    this.onLoadCallback();
+                }
+            })
             .catch((e) => {
-            console.log(e);
-        });
+                console.log(e);
+            });
     }
+
     /**
      * Init Google Api
      * And create gapi in global
@@ -63,17 +66,18 @@ class ApiCalendar {
             window['gapi'].load('client:auth2', this.initClient);
         };
     }
+
     /**
      * Sign in Google user account
      */
     handleAuthClick() {
         if (this.gapi) {
             this.gapi.auth2.getAuthInstance().signIn();
-        }
-        else {
+        } else {
             console.log("Error: this.gapi not loaded");
         }
     }
+
     /**
      * Set the default attribute calendar
      * @param {string} newCalendar
@@ -81,6 +85,7 @@ class ApiCalendar {
     setCalendar(newCalendar) {
         this.calendar = newCalendar;
     }
+
     /**
      * Execute the callback function when a user is disconnected or connected with the sign status.
      * @param callback
@@ -88,11 +93,11 @@ class ApiCalendar {
     listenSign(callback) {
         if (this.gapi) {
             this.gapi.auth2.getAuthInstance().isSignedIn.listen(callback);
-        }
-        else {
+        } else {
             console.log("Error: this.gapi not loaded");
         }
     }
+
     /**
      * Execute the callback function when gapi is loaded
      * @param callback
@@ -100,22 +105,22 @@ class ApiCalendar {
     onLoad(callback) {
         if (this.gapi) {
             callback();
-        }
-        else {
+        } else {
             this.onLoadCallback = callback;
         }
     }
+
     /**
      * Sign out user google account
      */
     handleSignoutClick() {
         if (this.gapi) {
             this.gapi.auth2.getAuthInstance().signOut();
-        }
-        else {
+        } else {
             console.log("Error: this.gapi not loaded");
         }
     }
+
     /**
      * List all events in the calendar
      * @param {number} maxResults to see
@@ -125,58 +130,58 @@ class ApiCalendar {
     listUpcomingEvents(maxResults, calendarId = this.calendar) {
 
         if (this.gapi) {
-           return this.gapi.client.calendar.events.list({
-               'calendarId': calendarId,
+            return this.gapi.client.calendar.events.list({
+                'calendarId': calendarId,
 
-               'timeMin' : moment().startOf("month").toISOString(),
-               'timeMax' : moment().endOf("month").toISOString(),
-               'showDeleted': false,
-               'singleEvents': true,
-               'maxResults': maxResults,
-               'orderBy': 'startTime'
-           });
-       }
-        else {
+                'timeMin': moment().startOf("month").toISOString(),
+                'timeMax': moment().endOf("month").toISOString(),
+                'showDeleted': false,
+                'singleEvents': true,
+                'maxResults': maxResults,
+                'orderBy': 'startTime'
+            });
+        } else {
             console.log("Error: this.gapi not loaded");
             return false;
         }
     }
+
     listMonthEvents(date, maxResults, calendarId = this.calendar) {
 
         if (this.gapi) {
-           return this.gapi.client.calendar.events.list({
-               'calendarId': calendarId,
-               'timeMin' : moment(date).startOf("month").toISOString(),
-               'timeMax' : moment(date).endOf("month").toISOString(),
-               'showDeleted': false,
-               'singleEvents': true,
-               'maxResults': maxResults,
-               'orderBy': 'startTime'
-           });
-       }
-        else {
+            return this.gapi.client.calendar.events.list({
+                'calendarId': calendarId,
+                'timeMin': moment(date).startOf("month").toISOString(),
+                'timeMax': moment(date).endOf("month").toISOString(),
+                'showDeleted': false,
+                'singleEvents': true,
+                'maxResults': maxResults,
+                'orderBy': 'startTime'
+            });
+        } else {
             console.log("Error: this.gapi not loaded");
             return false;
         }
     }
+
     listDayEvents(date, maxResults) {
 
         if (this.gapi) {
-           return this.gapi.client.calendar.events.list({
-               'calendarId': "449jtc5acfnd0ohkrlpncsiubk@group.calendar.google.com",
-               'timeMin' : moment(date).startOf("day").toISOString(),
-               'timeMax' : moment(date).endOf("day").toISOString(),
-               'showDeleted': false,
-               'singleEvents': true,
-               'maxResults': maxResults,
-               'orderBy': 'startTime',
-           });
-       }
-        else {
+            return this.gapi.client.calendar.events.list({
+                'calendarId': "449jtc5acfnd0ohkrlpncsiubk@group.calendar.google.com",
+                'timeMin': moment(date).startOf("day").toISOString(),
+                'timeMax': moment(date).endOf("day").toISOString(),
+                'showDeleted': false,
+                'singleEvents': true,
+                'maxResults': maxResults,
+                'orderBy': 'startTime',
+            });
+        } else {
             console.log("Error: this.gapi not loaded");
             return false;
         }
     }
+
     /**
      * Create an event from the current time for a certain period
      * @param {number} time in minutes for the event
@@ -185,7 +190,7 @@ class ApiCalendar {
      * @param {string} calendarId
      * @returns {any}
      */
-    createEventFromNow({ time, summary, description = '' }, calendarId = this.calendar) {
+    createEventFromNow({time, summary, description = ''}, calendarId = this.calendar) {
         const event = {
             summary,
             description,
@@ -204,6 +209,7 @@ class ApiCalendar {
             'resource': event,
         });
     }
+
     /**
      * Create Calendar event
      * @param {string} calendarId for the event.
@@ -217,11 +223,11 @@ class ApiCalendar {
         });
     }
 }
+
 let apiCalendar;
 try {
     apiCalendar = new ApiCalendar();
-}
-catch (e) {
+} catch (e) {
     console.log(e);
 }
 export default apiCalendar;

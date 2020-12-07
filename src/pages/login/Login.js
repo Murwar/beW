@@ -8,7 +8,7 @@ import Card from "semantic-ui-react/dist/commonjs/views/Card";
 import {Redirect} from "react-router";
 import store from 'store';
 import isLoggedIn from "./is_logged_in";
-import useWindowWidth from "../WindowWidth";
+import useWindowWidth from "../../components/WindowWidth";
 
 const Login = (props) => {
     store.set('loggedIn', false);
