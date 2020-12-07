@@ -14,7 +14,7 @@
     text-transform: uppercase;
     font-size: 20px;
     letter-spacing: 0.15px;
-    color: #000000;
+    color: #2e3a59;
 }
 
 .rectangle_new_room {
@@ -41,7 +41,7 @@ div h1.enterRoomData {
     text-transform: uppercase;
     font-size: 20px;
     letter-spacing: 0.15px;
-    color: #000000;
+    color: #2e3a59;
 }
 
 input.input_rooms {
