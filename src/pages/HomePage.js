@@ -10,6 +10,14 @@ import Settings from "./Settings";
 import './home_page.css'
 import React from "react";
 import isLoggedIn from "./login/is_logged_in";
+import AddNewHotel from "./AddNewHotel";
+import DeleteHotel from "./DeleteHotel";
+import HotelSettings from "./HotelSettings";
+import AddNewRoom from "./AddNewRoom";
+import DeleteRoom from "./DeleteRoom";
+import RoomSettings from "./RoomSettings";
+import HotelFirst from "./HotelFirst";
+import HotelSecond from "./HotelSecond";
 
 const HomePage = ({history}) => {
     if (!isLoggedIn()) {
@@ -27,6 +35,14 @@ const HomePage = ({history}) => {
                     <Route path={'/statistics'} component={Statistics}/>
                     <Route path={'/accommodations'} component={Accommodations}/>
                     <Route path={'/settings'} component={Settings}/>
+                    <Route path={'/add_new_hotel'} component={AddNewHotel}/>
+                    <Route path={'/delete_hotel'} component={DeleteHotel}/>
+                    <Route path={'/hotel_settings'} component={HotelSettings}/>
+                    <Route path={'/add_new_room'} component={AddNewRoom}/>
+                    <Route path={'/delete_room'} component={DeleteRoom}/>
+                    <Route path={'/room_settings'} component={RoomSettings}/>
+                    <Route path={'/hotel_first'} component={HotelFirst}/>
+                    <Route path={'/hotel_second'} component={HotelSecond}/>
                 </Switch>
             </Router>
         </div>
