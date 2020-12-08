@@ -96,7 +96,7 @@ class BookingSchedule extends Component {
           <div className="main-block">
             <div className="large-title">Календарь бронирований</div>
             <hr class="separator" />
-            <div className="booking_schedule">
+            <div className="arrival_schedule">
                 <div className="calendarr">
                     <DayPickerSingleDateController
                         {...defaultProps}
