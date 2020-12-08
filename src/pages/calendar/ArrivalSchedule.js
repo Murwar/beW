@@ -153,6 +153,9 @@ class ArrivalSchedule extends Component {
         );
 
         return (
+          <div className="main-block">
+            <div className="large-title">Календарь заездов</div>
+            <hr class="separator" />
             <div className="arrival_schedule">
                 <div className="calendarr">
                     <DayPickerSingleDateController
@@ -216,6 +219,7 @@ class ArrivalSchedule extends Component {
                         id="your_unique_id"
                         enableOutsideDays
                     />
+                </div>
                 </div>
             </div>
         );
