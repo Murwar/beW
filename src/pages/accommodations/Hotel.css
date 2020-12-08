@@ -16,6 +16,7 @@
     display: flex;
     justify-content: center;
     margin-top: 1rem;
+    margin-bottom: 0;
 
     font-family: Roboto, serif;
     font-style: normal;
@@ -83,8 +84,6 @@
 
 
 .roomSettingsButtom {
-
-    margin-top: 30px;
     margin-left: 100px;
     font-size: 14px;
 
@@ -104,10 +103,10 @@
 }
 
 .buttonAddRoom {
-    width: 304px;
-    height: 342px;
+    width: 344px;
+    height: 382px;
     margin: 20px;
-    margin-top: 30px;
+    margin-top: 10px;
 
     font-size: 14px;
     text-align: center;

@@ -59,10 +59,10 @@
 }
 
 .buttonAddNewHotel_accommodations {
-    width: 304px;
-    height: 342px;
+    width: 344px;
+    height: 382px;
     margin: 20px;
-    margin-top: 30px;
+    margin-top: 10px;
 
     font-size: 14px;
     text-align: center;
@@ -125,5 +125,5 @@
 }
 
 .button_link {
-    margin-top: 0px;
+    margin-top: 0;
 }
