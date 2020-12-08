@@ -6,7 +6,7 @@ import ArrivalSchedule from "./calendar/ArrivalSchedule";
 import BookingSchedule from "./calendar/BookingSchedule";
 import Statistics from "./statistics/Statistics";
 import Accommodations from "./accommodations/Accommodations";
-import Settings from "./calendar/Settings";
+import Settings from "./settings/Settings";
 import './home_page.css'
 import React from "react";
 import isLoggedIn from "./login/is_logged_in";

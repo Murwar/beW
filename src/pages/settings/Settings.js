@@ -1,8 +1,8 @@
 import React, { ReactNode, SyntheticEvent } from "react";
-import ApiCalendar from "./ApiCalendar.js";
+import ApiCalendar from "../calendar/ApiCalendar.js";
 import moment from "moment";
 import "./Settings.css";
-import { DATA } from "./ApiCalendar.js";
+import { DATA } from "../calendar/ApiCalendar.js";
 
 export default class Settings extends React.Component {
   constructor(props) {
