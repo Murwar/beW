@@ -74,16 +74,11 @@ class BookingSchedule extends Component {
 
         let availiableApartEvents = availiableApartList.map(function (event) {
             return (
-                <div className="links">
-                    <a
-                        href={event.htmlLink}
-                        target="_blank"
-                        key={event.id}
-                        className="link"
-                    >
-                        {event.summary} <span className="badge"></span>
-                    </a>
-                </div>
+              <div className="link">
+                  <i class="qtip tip-top" data-tip={event.description}>
+                      {event.summary}
+                  </i>
+              </div>
             );
         });
 
@@ -101,7 +96,7 @@ class BookingSchedule extends Component {
           <div className="main-block">
             <div className="large-title">Календарь бронирований</div>
             <hr class="separator" />
-            <div className="arrival_schedule">
+            <div className="booking_schedule">
                 <div className="calendarr">
                     <DayPickerSingleDateController
                         {...defaultProps}
