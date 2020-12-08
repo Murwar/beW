@@ -18,7 +18,7 @@
     margin-top: 1rem;
     margin-bottom: 0;
 
-    font-family: Roboto, serif;
+    font-family: Lato, serif;
     font-style: normal;
     text-transform: uppercase;
     font-size: 30px;
@@ -59,10 +59,8 @@
 }
 
 .textInCards {
-
     margin-top: 10px;
-
-    font-family: Roboto, serif;
+    font-family: Lato, serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

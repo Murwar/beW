@@ -1,12 +1,5 @@
 @import url('http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext');
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Lato', sans-serif;
-}
-
 .booking_schedule {
     display: grid;
     grid-column-start: 2;
@@ -17,6 +10,18 @@
     justify-content: center;
     font-size: 3rem;
     background-color: #b2c2d7;
+    color: #2e3a59;
+}
+.CalendarDay{
+    color: #2e3a59;
+}
+.CalendarDay:hover, .CalendarDay__selected{
+    background-color: #2196F3;
+    border: 1px double #2196F3;
+    color: #ffffff;
+}
+.CalendarMonth_caption {
+    color: #2e3a59;
 }
 
 
@@ -32,6 +37,7 @@
     font-size: 1rem;
     margin-left: auto;
     margin-right: auto;
+    color: #2e3a59;
 }
 
 
@@ -82,7 +88,6 @@
     box-shadow: 0 3px 0 #0c8d72;
     border: 2px solid transparent;
     margin-left: 8px;
-
     font-size: 1rem;
     font-weight: 600;
     line-height: 1;
