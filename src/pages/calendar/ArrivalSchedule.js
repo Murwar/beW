@@ -172,10 +172,10 @@ class ArrivalSchedule extends Component {
                                             <summary>
                                                 Отъезды: {this.state.checkoutApartList.length}
                                             </summary>
-                                            <div className="detblock">
+
                                                 <div className="spoil-inside">
                                                     {checkoutApartList.length > 0 && checkoutApartEvents}
-                                                </div>
+
                                             </div>
                                         </details>
 
@@ -195,22 +195,22 @@ class ArrivalSchedule extends Component {
                                             <summary>
                                                 Неубранные номера: {this.state.dirtyApartList.length}
                                             </summary>
-                                            <div className="detblock">
+
                                                 <div className="spoil-inside">
                                                     {dirtyApartList.length > 0 && dirtyApartEvents}
                                                 </div>
-                                            </div>
+
                                         </details>
 
                                         <details>
                                             <summary>
                                                 Проблемные номера: {this.state.brokenApartList.length}
                                             </summary>
-                                            <div className="detblock">
+
                                                 <div className="spoil-inside">
                                                     {brokenApartList.length > 0 && brokenApartEvents}
                                                 </div>
-                                            </div>
+                                    
                                         </details>
                                     </div>
                                 </div>
