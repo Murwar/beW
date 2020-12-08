@@ -12,7 +12,8 @@
 	border-color: rgba(224, 228, 231, 0.836);
 	transition: all linear .2s;
 	box-shadow: 0 7px 10px rgba(3, 69, 131, 0.603), 0 2px 4px rgba(36, 131, 219, 0.842);
-
+    min-height: 40rem;
+    max-height: 60rem;
 }
 
 .separator {
@@ -69,6 +70,7 @@
     margin-left: auto;
     margin-right: auto;
     color: #2e3a59;
+    margin-top: 0;
 }
 
 
@@ -103,7 +105,6 @@
 }
 
 .calendarr {
-    background: #ededed;
     display: flex;
     align-items: flex-start;
     justify-content: center;

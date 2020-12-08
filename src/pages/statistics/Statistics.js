@@ -44,8 +44,13 @@ class Statistics extends Component {
                     <BookedGraph/>
                 </div>
                 <div className={"mini_graphs"}>
-                    <ArrivalsGraph/>
-                    <VisitsGraph/>
+                    <div className={"stat_arrivals"}>
+                        <ArrivalsGraph/>
+                    </div>
+
+                    <div className={"stat_visits"}>
+                        <VisitsGraph/>
+                    </div>
                 </div>
 
             </div>

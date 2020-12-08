@@ -1,9 +1,11 @@
 .but-list {
-	margin-left: 2vw;
+	margin-left: 1.5rem;
 	margin-right: 60vw;
 	display: flex;
 	justify-content: flex-start;
 	flex-direction: column;
+	color: #2e3a59;
+	min-width: 10rem;
 }
 
 .B-sign {
@@ -25,17 +27,15 @@
 	font-size: 45px;
 	letter-spacing: 0.15px;
 	font-weight: 700;
-	letter-spacing: 0.15px;
 	color: #2E3A59;
 }
 
 .small-title {
 	margin-bottom: 0.3em;
+	margin-left: 1.5rem;
 	margin-top: 0.3em;
 	font-size: 25px;
-	padding-left: 10px;
 	letter-spacing: 0.15px;
 	font-weight: 100;
-	letter-spacing: 0.15px;
 	color: #2E3A59;
 }

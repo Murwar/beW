@@ -7,6 +7,7 @@
 }
 
 .main-block {
+	position: inherit;
 	grid-column-start: 2;
 	grid-column-end: 16;
 	grid-row-start: 1;
@@ -58,9 +59,13 @@
 
 .mini_graphs {
 	display: flex;
-	justify-content: space-around;
+	justify-content: center;
 	flex-direction: row;
 	grid-row: 1;
 	grid-column: 3;
 	margin: 1rem;
+}
+
+.stat_visits, .stat_arrivals{
+	margin: 0 1rem;
 }
