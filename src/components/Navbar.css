@@ -35,7 +35,7 @@
 }
 
 .sidebar {
-    height: 100vh;
+    height: inherit;
     top: 0;
 }
 

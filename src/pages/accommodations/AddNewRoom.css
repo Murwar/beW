@@ -1,0 +1,107 @@
+.add_new_room {
+    grid-column-start: 2;
+    grid-column-end: 16;
+    height: 100vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title_new_room {
+    margin-top: 25px;
+    margin-left: 300px;
+    font-family: Lato, serif;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 0.15px;
+    color: #2e3a59;
+}
+
+.rectangle_new_room {
+    width: 1000px;
+    height: 800px;
+
+    margin-left: 5rem;
+    margin-top: 1rem;
+
+    background: white;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgba(224, 228, 231, 0.836);
+    transition: all linear .2s;
+    box-shadow: 0 14px 28px rgba(3, 69, 131, 0.603), 0 4px 12px rgba(36, 131, 219, 0.842);
+}
+
+div h1.enterRoomData {
+    margin-left: 80px;
+    font-family: Lato, serif;
+    font-style: normal;
+    text-transform: uppercase;
+    font-size: 20px;
+    letter-spacing: 0.15px;
+    color: #2e3a59;
+}
+
+input.input_rooms {
+    margin-left: 80px;
+    width: 300px;
+    height: 50px;
+}
+
+.input_rooms_select {
+    margin-left:80px;
+    width: 300px;
+    height: 50px;
+}
+
+table td {
+    border-bottom: 1px solid transparent;
+}
+
+button.button_save_new_room{
+    width: 150px;
+    height: 80px;
+    
+    margin-left: 300px;
+
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 1.20px;
+    text-transform: uppercase;
+    color: #faf8f8;
+
+    border-color: rgba(20, 102, 61, 0.973);
+    background: rgba(69, 155, 115, 0.973);
+    border-radius: 20px;
+    transition: all linear .2s;
+}
+
+button.button_save_new_room:hover {
+    font-size: 16px;
+    border-color: rgba(20, 102, 61, 0.973);
+    background: rgba(40, 204, 122, 0.973);
+    box-shadow: 0 4px 15px rgba(36, 219, 127, 0.842);
+}
+
+button.button_cancel_new_room {
+    width: 150px;
+    height: 80px;
+    
+    margin-left: 100px;
+
+    letter-spacing: 1.20px;
+    font-size: 14px;
+    text-align: center;
+    text-transform: uppercase;
+
+    border-color: rgba(167, 46, 30, 0.973);
+    background: rgba(240, 134, 108, 0.973);
+    border-radius: 20px;
+}
+
+button.button_cancel_new_room:hover {
+    font-size: 16px;
+    border-color: rgba(184, 29, 9, 0.973);
+    background: rgba(250, 105, 86, 0.973);
+    box-shadow: 0 4px 15px rgba(245, 76, 58, 0.973);;
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import './box_info.css';
-import useWindowWidth from "../../WindowWidth";
+import useWindowWidth from "../../../components/WindowWidth";
 import ArrivalsBox from "./boxes/ArrivalsBox";
 import CancelBox from "./boxes/CancelBox";
 import ClientsBox from "./boxes/ClientsBox";

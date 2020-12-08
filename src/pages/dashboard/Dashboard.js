@@ -28,7 +28,9 @@ class Dashboard extends Component {
                     <CardCancel status={this.state.cardStatus} updateStatus={this.updateStatus}/>
                     <BoxInfo status={this.state.cardStatus}/>
                 </div>
-                <ProceedsGraph/>
+                <div className={"dashboard_proceeds"}>
+                    <ProceedsGraph/>
+                </div>
                 <div className={"right_column"}>
                     <Calendar/>
                     <VisitsGraph/>

@@ -1,0 +1,98 @@
+@import url('http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext');
+
+.booking_schedule {
+    display: grid;
+    grid-column-start: 2;
+    grid-column-end: 16;
+    grid-row-start: 1;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    background-color: #b2c2d7;
+    color: #2e3a59;
+}
+.CalendarDay{
+    color: #2e3a59;
+}
+.CalendarDay:hover, .CalendarDay__selected{
+    background-color: #2196F3;
+    border: 1px double #2196F3;
+    color: #ffffff;
+}
+.CalendarMonth_caption {
+    color: #2e3a59;
+}
+
+
+.arrival_schedule {
+    padding: 1rem;
+    display: block;
+    grid-column-start: 2;
+    grid-column-end: 16;
+    grid-row-start: 1;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    color: #2e3a59;
+}
+
+
+.spoil {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-right: 10px;
+    padding-left: 10px;
+    flex-direction: row;
+    z-index: 0;
+}
+
+.spoil-inside {
+    display: flex;
+    align-content: space-between;
+    flex-wrap: wrap;
+}
+
+.detblock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    margin-top: 15px;
+}
+
+.spoilb {
+    background: #f7f7f7;
+    z-index: 0;
+    padding-top: 30px;
+}
+
+.calendarr {
+    background: #ededed;
+}
+
+.links {
+    font-size: 1rem;
+    color: #00a699;
+}
+
+.link {
+
+    border-radius: 5px;
+    background: #00a699;
+    color: #fff;
+    box-shadow: 0 3px 0 #0c8d72;
+    border: 2px solid transparent;
+    margin-left: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1;
+    margin-top: 15px;
+    width: 104px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}

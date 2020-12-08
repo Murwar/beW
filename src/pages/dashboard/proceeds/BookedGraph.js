@@ -10,15 +10,15 @@ import {
 import "react-vis/dist/style.css";
 import './proceeds_graph.css';
 import useWindowWidth from '../../../components/WindowWidth';
-import {DATA} from './proceeds_data';
+import {DATA} from '../../calendar/ApiCalendar.js';
 
-export default function ProceedsGraph() {
+export default function BookedGraph() {
     const [crosshairValues, setCrosshairValues] = useState([]);
 
     return (
         <div className={"proceeds"}>
             <div className={"proceeds_graph"}>
-                <p className={"proceeds_title"}>Продажи</p>
+                <p className={"proceeds_title"}>Бронирования</p>
                 <XYPlot
                     xType="ordinal"
                     onMouseLeave={() => setCrosshairValues([])}
@@ -53,10 +53,9 @@ export default function ProceedsGraph() {
                         style={{}}/>
                     <Crosshair values={crosshairValues} titleFormat={(d) => ({
                         title: 'Дата', value: new Date(Date.parse(d[0].x)).toLocaleDateString()
-                    })} itemsFormat={(d) => [{title: 'Выручка', value: d[0].y}]}/>
+                    })} itemsFormat={(d) => [{title: 'Забронировано', value: d[0].y}]}/>
                 </XYPlot>
             </div>
         </div>
     );
 }
-
