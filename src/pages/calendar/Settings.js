@@ -1,96 +1,45 @@
-import React, {ReactNode, SyntheticEvent} from 'react';
-import ApiCalendar from './ApiCalendar.js';
+import React, { ReactNode, SyntheticEvent } from "react";
+import ApiCalendar from "./ApiCalendar.js";
 import moment from "moment";
-
-const eventFromNow: object = {
-    summary: "Poc Dev From Now",
-    time: 480,
-};
+import "./Settings.css";
+import { DATA } from "./ApiCalendar.js";
 
 export default class Settings extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleItemClick = this.handleItemClick.bind(this);
+  }
 
-
-    constructor(props) {
-        super(props);
-        this.handleItemClick = this.handleItemClick.bind(this);
-        this.state = {
-            bookcount: 0
-        };
+  handleItemClick(event: SyntheticEvent<any>, name: string): void {
+    if (name === "sign-in") {
+      ApiCalendar.handleAuthClick();
+    } else if (name === "sign-out") {
+      ApiCalendar.handleSignoutClick();
     }
+  }
 
-    handleItemClick(event: SyntheticEvent<any>, name: string): void {
-        if (name === 'sign-in') {
-            ApiCalendar.handleAuthClick();
-
-
-        } else if (name === 'sign-out') {
-            ApiCalendar.handleSignoutClick();
-        } else if (name === 'show') {
-            var daysOfYear = [];
-            var k = 0;
-
-            for (var d = new Date(); d <= new Date().setDate(new Date().getDate() + 7); d.setDate(d.getDate() + 1)) {
-                console.log(d);
-
-
-                console.log("-------------------");
-                ApiCalendar.listDayEvents(d, 100).then(({result}: any) => {
-                    k = k + 1
-                    var b = 0
-                    console.log(result.items);
-                    let events = result.items;
-                    let eventsList = events.map(function (event) {
-
-                        if (event.location == "booked") {
-                            b = b + 1
-
-                        }
-                    });
-
-                    console.log(b);
-                    console.log(k);
-
-
-                });
-
-            }
-            console.log(daysOfYear);
-        } else if (name === 'new') {
-            ApiCalendar.createEventFromNow(eventFromNow)
-                .then((result: object) => {
-                    console.log(result);
-                })
-                .catch((error: any) => {
-                    console.log(error);
-                });
-        }
-    }
-
-    render(): ReactNode {
-
-        return (
-            <div>
-                <button
-                    onClick={(e) => this.handleItemClick(e, 'sign-in')}
-                >
-                    sign-in
-                </button>
-                <button
-                    onClick={(e) => this.handleItemClick(e, 'sign-out')}
-                >
-                    sign-out
-                </button>
-                <button
-                    onClick={(e) => this.handleItemClick(e, 'new')}
-                >
-                    new
-                </button>
-                <button
-                    onClick={(e) => this.handleItemClick(e, 'show')}
-                >
-                    show
-                </button>
-            </div>
-        );
-    }
+  render(): ReactNode {
+    return (
+      <div className="main-block">
+        <div className="large-title">Настройки</div>
+        <hr class="separator" />
+        <div className="small-title">Календари</div>
+        <div className="but-list">
+          Авторизация в Calendar
+          <button class="B-sign" onClick={(e) => this.handleItemClick(e, "sign-in")}>
+            <img
+              width="15px"
+              alt="Google login"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png"
+            />
+            oogle Sign In
+          </button>
+          <button onClick={(e) => this.handleItemClick(e, "sign-out")}>
+            Sign out
+          </button>
+        </div>
+        <hr class="separator" />
+      </div>
+    );
+  }
 }
