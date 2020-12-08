@@ -29,7 +29,7 @@ input.set_rooms {
    
 }
 
-.listButton_hsettings{
+button.listButton_hsettings{
     width: 300px;
     height: 80px;
 
@@ -45,14 +45,14 @@ input.set_rooms {
     transition: all linear .2s;
 }
 
-.listButton_hsettings:hover {
+button.listButton_hsettings:hover {
     font-size: 14px;
     border-color: white;
     background: rgba(40, 125, 204, 0.973);
     box-shadow: 0 4px 15px rgba(36, 131, 219, 0.842);
 }
 
-.button_save_settings_hotel {
+button.button_save_settings_hotel {
     width: 150px;
     height: 80px;
     margin: 20px;
@@ -72,14 +72,14 @@ input.set_rooms {
     transition: all linear .2s;
 }
 
-.button_save_settings_hotel:hover {
+button.button_save_settings_hotel:hover {
     font-size: 16px;
     border-color: rgba(20, 102, 61, 0.973);
     background: rgba(40, 204, 122, 0.973);
     box-shadow: 0 4px 15px rgba(36, 219, 127, 0.842);
 }
 
-.button_delete_hotel_settings {
+button.button_delete_hotel_settings {
     width: 150px;
     height: 80px;
     margin: 20px;
@@ -97,7 +97,7 @@ input.set_rooms {
     border-radius: 20px;
 }
 
-.button_delete_hotel_settings:hover {
+button.button_delete_hotel_settings:hover {
     font-size: 16px;
     
     border-color: rgba(184, 29, 9, 0.973);

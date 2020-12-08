@@ -47,7 +47,7 @@ div h1.enterHotelData_delete_hotel {
 }
 
 
-.button_delete_delete_hotel {
+button.button_delete_delete_hotel {
     width: 150px;
     height: 80px;
 
@@ -64,7 +64,7 @@ div h1.enterHotelData_delete_hotel {
     border-radius: 20px;
 }
 
-.button_delete_delete_hotel:hover {
+button.button_delete_delete_hotel:hover {
     font-size: 16px;
     border-color: rgba(184, 29, 9, 0.973);
     background: rgba(248, 51, 25, 0.973);
@@ -73,7 +73,7 @@ div h1.enterHotelData_delete_hotel {
 }
 
 
-.button_cancel_delete_hotel{
+button.button_cancel_delete_hotel{
     width: 150px;
     height: 80px;
 
@@ -89,7 +89,7 @@ div h1.enterHotelData_delete_hotel {
     border-radius: 20px;
 }
 
-.button_cancel_delete_hotel:hover {
+button.button_cancel_delete_hotel:hover {
     font-size: 16px;
     border-color: white;
     background: rgba(40, 125, 204, 0.973);

@@ -44,7 +44,7 @@ input.input_delete_room {
     height: 50px;
 }
 
-.button_delete_delete_room {
+button.button_delete_delete_room {
     width: 150px;
     height: 80px;
     margin-left: 300px;
@@ -57,7 +57,7 @@ input.input_delete_room {
     border-radius: 20px;
 }
 
-.button_delete_delete_room:hover {
+button.button_delete_delete_room:hover {
     font-size: 16px;
     border-color: rgba(184, 29, 9, 0.973);
     background: rgba(248, 51, 25, 0.973);
@@ -65,7 +65,7 @@ input.input_delete_room {
     ;
 }
 
-.button_cancel_delete_room {
+button.button_cancel_delete_room {
     width: 150px;
     height: 80px;
     margin-left: 100px;
@@ -78,7 +78,7 @@ input.input_delete_room {
     border-radius: 20px;
 }
 
-.button_cancel_delete_room:hover {
+button.button_cancel_delete_room:hover {
     font-size: 16px;
     border-color: white;
     background: rgba(40, 125, 204, 0.973);
@@ -136,7 +136,7 @@ input.input_delete_room {
 }
 
 
-.button_modal_delete {
+button.button_modal_delete {
     width: 100px;
     height: 60px;
 
@@ -151,7 +151,7 @@ input.input_delete_room {
     border-radius: 20px;
 }
 
-.button_modal_delete:hover {
+button.button_modal_delete:hover {
     
     border-color: rgba(184, 29, 9, 0.973);
     background: rgba(248, 51, 25, 0.973);
@@ -160,7 +160,7 @@ input.input_delete_room {
 }
 
 
-.button_cancel_modal {
+button.button_cancel_modal {
     width: 100px;
     height: 60px;
 
@@ -174,7 +174,7 @@ input.input_delete_room {
     border-radius: 20px;
 }
 
-.button_cancel_modal:hover {
+button.button_cancel_modal:hover {
    
     border-color: white;
     background: rgba(40, 125, 204, 0.973);

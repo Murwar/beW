@@ -16,7 +16,7 @@
     color: #2e3a59;
 }
 
-.button_settings_delete_room {
+button.button_settings_delete_room {
     width: 150px;
     height: 80px;
 
@@ -32,7 +32,7 @@
     border-radius: 20px;
 }
 
-.button_settings_delete_room:hover {
+button.button_settings_delete_room:hover {
     font-size: 16px;
 
     border-color: rgba(184, 29, 9, 0.973);
@@ -40,11 +40,10 @@
     box-shadow: 0 4px 15px rgba(240, 57, 37, 0.973);;
 }
 
-.button_settings_save_room {
+button.button_settings_save_room{
     width: 150px;
     height: 80px;
     margin-left: 100px;
-
     font-size: 14px;
     text-align: center;
     letter-spacing: 1.20px;
@@ -57,16 +56,17 @@
     transition: all linear .2s;
 }
 
-.button_settings_save_room:hover {
+button.button_settings_save_room:hover {
     font-size: 16px;
     border-color: rgba(20, 102, 61, 0.973);
     background: rgba(40, 204, 122, 0.973);
     box-shadow: 0 4px 15px rgba(36, 219, 127, 0.842);
 }
 
-.button_settings_cancel_room {
+button.button_settings_cancel_room {
     width: 150px;
     height: 80px;
+    
     margin-left: 100px;
     letter-spacing: 1.20px;
     font-size: 14px;
@@ -78,7 +78,7 @@
     border-radius: 20px;
 }
 
-.button_settings_cancel_room:hover {
+button.button_settings_cancel_room:hover {
     font-size: 16px;
     border-color: rgba(184, 29, 9, 0.973);
     background: rgba(250, 105, 86, 0.973);
