@@ -67,6 +67,11 @@ def ensure_tables() -> None:
                 ' name VARCHAR(30) UNIQUE NOT NULL'
                 ')'
         )
+        cur.execute('CREATE TABLE IF NOT EXISTS permissions ('
+                ' id serial PRIMARY KEY NOT NULL,'
+                ' name VARCHAR(30) UNIQUE NOT NULL'
+                ')'
+        )
         cur.execute('CREATE TABLE IF NOT EXISTS rooms ('
                 ' id serial PRIMARY KEY NOT NULL,'
                 ' hotel_id int REFERENCES hotels(id) ON DELETE CASCADE NOT NULL,'
@@ -222,6 +227,45 @@ def add_room_category() -> Response:
         return make_response(jsonify({'id': cur.fetchone()[0]}))
 
 
+@app.route('/category/<category_id>', methods=['DELETE'])
+def delete_category(category_id: int) -> Response:
+    with props.conn.cursor() as cur:
+        cur.execute('DELETE FROM categories where id = %s ', (category_id))
+        props.conn.commit()
+    return make_response(jsonify({'result': f'category  with id={category_id}'}))
+
+
+# room permissions
+#get permission
+@app.route('/permissions/', methods=['GET'])
+def get_permissions() -> Response:
+    with props.conn.cursor() as cur:
+        cur.execute('SELECT id, name FROM permissions')
+        res = pandas.DataFrame(cur.fetchall(), columns=('id', 'name'))
+    return make_response(jsonify({'permissions': list(res.transpose().to_dict().values())}))
+
+#add permission
+@app.route('/permission/', methods=['POST'])
+def add_permission() -> Response:
+    body = json.loads(request.data)
+    if not ('name' in body):
+        raise ArgumentError("Missing 'name' parameter in request body")
+    with props.conn.cursor() as cur:
+        cur.execute(
+            'INSERT INTO permissions (name) VALUES (%s) RETURNING ID', (body['name'],))
+        props.conn.commit()
+        return make_response(jsonify({'id': cur.fetchone()[0]}))
+
+#delete permission
+@app.route('/permission/<permission_id>', methods=['DELETE'])
+def delete_permission(permission_id: int) -> Response:
+    with props.conn.cursor() as cur:
+        cur.execute('DELETE FROM permissions where id = %s ', (permission_id))
+        props.conn.commit()
+    return make_response(jsonify({'result': f'permission  with id={permission_id}'}))
+
+
+#error
 @app.errorhandler(Exception)
 def any_error(error: Exception) -> Response:
     props.conn.rollback()

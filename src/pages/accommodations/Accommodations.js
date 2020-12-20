@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import './Accommodations.css';
 
@@ -10,12 +10,12 @@ class Accommodations extends Component {
     constructor(props) {
         super(props)
         this.state = {
-          error: null,
-          isLoaded: false,
-          hotels: []
+            error: null,
+            isLoaded: false,
+            hotels: []
         }
     }
-    
+
     componentDidMount() {
         fetch('http://localhost:3001/hotels/')
             .then(res => res.json())
@@ -23,17 +23,19 @@ class Accommodations extends Component {
                 this.setState({
                     isLoaded: true,
                     hotels: result.hotels
-                })},
+                })
+            },
                 error => {
                     this.setState({
                         isLoaded: true,
                         error
-                })}
+                    })
+                }
             )
     }
 
     componentWillUnmount() {
-        this.setState({isLoaded: false})
+        this.setState({ isLoaded: false })
     }
 
     render() {
@@ -64,25 +66,25 @@ class Accommodations extends Component {
                 let hotel = hotels[i++]
                 cur.push(
                     <div className={'rectangle_accommodations'}>
-                    <img src={hotel1} alt="Hotel-1" className={'image_accommodations'} ></img>
-                    <p className={'textInCards_accommodations'}>{hotel.name} | {hotel.room_number} номеров.</p>
-                    <p className={'textInCards_accommodations'}>{hotel.address}</p>
+                        <img src={hotel1} alt="Hotel-1" className={'image_accommodations'} ></img>
+                        <p className={'textInCards_accommodations'}>{hotel.name} | {hotel.room_number} номеров.</p>
+                        <p className={'textInCards_accommodations'}>{hotel.address}</p>
 
-                    <div className={'horizontal'}>
-                        <a href={'/accommodations/hotel/' + hotel.id + '/settings'}>
-                            <button className={'hotelSettingsButtom_accommodations'} type='button'>
-                                настроить
+                        <div className={'horizontal'}>
+                            <a href={'/accommodations/hotel/' + hotel.id + '/settings'}>
+                                <button className={'hotelSettingsButtom_accommodations'} type='button'>
+                                    настроить
                             </button>
-                        </a>
-                        <div >
-                            <a href={'/accommodations/hotel/' + hotel.id + '/rooms'} >
-                                <button className={'roomsButton_accommodations'} type='button'>
-                                    номера
-                                </button>
                             </a>
+                            <div >
+                                <a href={'/accommodations/hotel/' + hotel.id + '/rooms'} >
+                                    <button className={'roomsButton_accommodations'} type='button'>
+                                        номера
+                                </button>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 )
             }
             split_hotels.push(cur)
