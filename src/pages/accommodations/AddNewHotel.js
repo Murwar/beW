@@ -69,7 +69,7 @@ class AddNewHotel extends Component {
                                     </td>
 
                                     <td>
-                                        <input className={'input_data_rooms'} type="number" value={room_number} onChange={event => this.setState({room_number: event.target.value})} placeholder="введите количество номеров" size="5" maxLength="3"></input>
+                                        <input className={'input_data_rooms'} type="number" value={room_number} onChange={event => this.setState({room_number: event.target.value})} placeholder="введите количество" size="5" maxLength="3"></input>
                                     </td>
                                 </tr>
                             </table>

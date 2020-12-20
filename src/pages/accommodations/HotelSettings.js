@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import './HotelSettings.css';
+import './DeleteModal.css';
 
 class HotelSettings extends Component {
 
@@ -124,19 +125,40 @@ class HotelSettings extends Component {
                             </tr>
                         </table>
                         <div className={'horizontal'}>
-                            <a href={'/accommodations/hotel/' + this.props.match.params.id + '/delete'} >
-                                <button className={'button_delete_hotel_settings'} type='button'>
-                                    Удалить объект
-                                </button>
-                            </a>
+
+                        <a href="#openModal">
+                            <button className={'button_delete_hotel_settings'} type='button'>
+                                Удалить объект
+                          </button>
+                        </a>
+
                             <button className={'button_save_settings_hotel'} type='submit'>
                                 Сохранить изменения
                             </button>
+
                             <button className={'button_cancel_new_hotel'} type='button' onClick={this.props.history.goBack}>
                                 Отмена
                             </button>
                         </div>
                     </form>
+
+                    <div id="openModal" class="modalDialog">
+                        <div>
+                            <h1 className={'modal_title'}>Вы точно хотите удалить объект?</h1>
+                            <button className={'button_modal_delete'} type='button' onClick={() => {
+                                fetch('http://localhost:3001/hotel/' + this.props.match.params.id + '/', {
+                                    method: 'delete'
+                                }).then(_ => this.props.history.push('/accommodations'), err => alert('Failed to delete hotel:' + err.message))
+                            }}>
+                                Удалить
+                            </button>
+
+                            <button className={'button_cancel_modal'} onClick={this.props.history.goBack} type='button'>
+                                Отмена
+                            </button>
+                        </div>
+                    </div>
+
                 </div>
             </div >
         )

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 import './AddNewRoom.css';
 
@@ -12,7 +12,8 @@ class AddNewRoom extends Component {
             number: '',
             category: '',
             capacity: 1,
-            permissions: '',
+            permissions: ['нет'],
+            permissions_list: [],
             booking_condition: '',
             commentary: '',
             categories: []
@@ -24,17 +25,17 @@ class AddNewRoom extends Component {
         event.preventDefault()
         fetch('http://localhost:3001/hotel/' + this.props.match.params.id + '/room/', {
             method: 'post',
-            headers: {'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 room_number: this.state.number,
                 category: this.state.category,
                 capacity: this.state.capacity,
-                permissions: JSON.stringify([this.state.permissions]),
+                permissions: this.state.permissions,
                 booking_condition: this.state.booking_condition,
                 commentary: this.state.commentary
             })
         }).then(_ => this.props.history.push('/accommodations/hotel/' + this.props.match.params.id + '/rooms'),
-                error => {console.log(error); this.props.history.push('/accommodations/hotel/' + this.props.match.params.id + '/rooms')}
+            error => { console.log(error); this.props.history.push('/accommodations/hotel/' + this.props.match.params.id + '/rooms') }
         )
     }
 
@@ -55,14 +56,30 @@ class AddNewRoom extends Component {
                     })
                 }
             )
+
+        fetch('http://localhost:3001/permissions/')
+            .then(res => res.json())
+            .then(result => {
+                this.setState({
+                    loaded: this.state.loaded + 1,
+                    permissions_list: result.permissions
+                })
+            },
+                error => {
+                    this.setState({
+                        loaded: this.state.loaded + 1,
+                        error
+                    })
+                }
+            )
     }
 
     componentWillUnmount() {
-        this.setState({isLoaded: false})
+        this.setState({ isLoaded: false })
     }
 
     render() {
-        const { isLoaded, error, number, _category, _capacity, _permissions, booking_condition, commentary, categories } = this.state
+        const { isLoaded, error, number, _category, _capacity, permissions, permissions_list, booking_condition, commentary, categories } = this.state
         if (!isLoaded) {
             return (
                 <div>
@@ -93,7 +110,7 @@ class AddNewRoom extends Component {
                                     <h1 className={'enterRoomData'}> Номер</h1>
                                 </td>
                                 <td >
-                                    <input className={'input_rooms'} type="text" value={number} onChange={event => {this.setState({number: event.target.value})}} placeholder="введите номер" size="5" maxLength="3"></input>
+                                    <input className={'input_rooms'} type="text" value={number} onChange={event => { this.setState({ number: event.target.value }) }} placeholder="введите номер" size="5" maxLength="3"></input>
                                 </td>
                             </tr>
 
@@ -103,8 +120,8 @@ class AddNewRoom extends Component {
                                 </td>
 
                                 <td>
-                                    <select name="category" required onChange={event => {this.setState({category: event.target.value})}} className={'input_rooms_select'} >
-                                        {categories.map(category => 
+                                    <select name="category" required onChange={event => { this.setState({ category: event.target.value }) }} className={'input_rooms_select'} >
+                                        {categories.map(category =>
                                             <option>{category.name}</option>
                                         )}
                                     </select>
@@ -117,7 +134,7 @@ class AddNewRoom extends Component {
                                 </td>
 
                                 <td>
-                                    <select required onChange={event => {this.setState({capacity: event.target.value})}} className={'input_rooms_select'} >
+                                    <select required onChange={event => { this.setState({ capacity: event.target.value }) }} className={'input_rooms_select'} >
                                         <option defaultChecked>1</option>
                                         <option >2</option>
                                         <option >3</option>
@@ -133,12 +150,39 @@ class AddNewRoom extends Component {
                                 </td>
 
                                 <td>
-                                    <select required onChange={event => {this.setState({permissions: event.target.value})}} className={'input_rooms_select'} >
-                                        <option defaultChecked>нет</option>
-                                        <option >дети</option>
-                                        <option >животные</option>
-                                        <option >курение</option>
-                                        <option >шум</option>
+                                <input className={'show_permissions'} type="text" value={permissions.join(', ')} ></input>
+
+
+                                    <select required onChange={event => {
+
+                                        let perm = permissions
+
+                                        if (event.target.value === 'нет'){
+                                            perm = ['нет']
+                                        } else {
+                                            if (perm[0] === 'нет'){
+                                                perm=[]
+                                            }
+                                            if (perm.indexOf(event.target.value) === -1) {
+                                                perm.push(event.target.value)
+                                            } else {
+                                                perm.splice(perm.indexOf(event.target.value), 1)
+                                            }
+                                        }
+
+                                        console.log(perm);
+
+                                        this.setState({ permissions: perm })
+
+                                    }} value={permissions} className={'input_permissions'} multiple='true' size='2'>
+
+                                        {permissions_list.map(permission =>
+                                            <option >{permission.name}</option>
+                                        )}
+
+
+
+
                                     </select>
                                 </td>
                             </tr>
@@ -149,17 +193,17 @@ class AddNewRoom extends Component {
                                 </td>
 
                                 <td>
-                                    <input className={'input_rooms'} type="text" value={booking_condition} onChange={event => {this.setState({booking_condition: event.target.value})}} placeholder="введите условия для бронирования" size="5"></input>
+                                    <input className={'input_rooms'} type="text" value={booking_condition} onChange={event => { this.setState({ booking_condition: event.target.value }) }} placeholder="введите условия для бронирования" size="5"></input>
                                 </td>
                             </tr>
 
                             <tr>
                                 <td>
-                                    <h1 className={'enterRoomData'}> Комментарий  </h1>
+                                    <h1 className={'enterRoomData'}> Состояние  </h1>
                                 </td>
 
                                 <td>
-                                    <input className={'input_rooms'} type="text" value={commentary} onChange={event => {this.setState({commentary: event.target.value})}} placeholder="введите комментарий" size="5"></input>
+                                    <input className={'input_rooms'} type="text" value={commentary} onChange={event => { this.setState({ commentary: event.target.value }) }} placeholder="опишите состояние номера" size="5"></input>
                                 </td>
                             </tr>
                         </table>

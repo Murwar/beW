@@ -32,7 +32,7 @@ class HotelFirst extends Component {
                     })
                 }
             )
-            
+
         fetch('http://localhost:3001/hotel/' + this.props.match.params.id + '/rooms/')
             .then(res => res.json())
             .then(result => {
@@ -51,7 +51,7 @@ class HotelFirst extends Component {
     }
 
     componentWillUnmount() {
-        this.setState({isLoaded: 0})
+        this.setState({ isLoaded: 0 })
     }
 
     render() {
@@ -84,7 +84,7 @@ class HotelFirst extends Component {
                     <div className={'rectangle'}>
                         <img src={room1} alt="Room-1" className={'image'}></img>
                         <p className={'textInCards'}>{room.room_number} | {room.category}</p>
-                        
+
                         <div className={'horizontal'}>
                             <a href={'/accommodations/hotel/' + this.props.match.params.id + '/room/' + room.room_number + '/settings'}>
                                 <button className={'roomSettingsButton'} type='button'>
@@ -113,8 +113,15 @@ class HotelFirst extends Component {
             <div className={'hotel_first'}>
                 <h1 className={'title'} >{hotel_name}</h1>
                 <div className={'roomCards'}>
+
+                    <a href={'/accommodations' }>
+                        <button className={'backButton'} type='button'>
+                            Назад
+                         </button>
+                    </a>
+
                     <div className={'vertical'}>
-                        {split_rooms.map(roomsline => 
+                        {split_rooms.map(roomsline =>
                             <div className={'horizontal'}>
                                 {roomsline.map(room => room)}
                             </div>

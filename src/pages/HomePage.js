@@ -16,8 +16,8 @@ import HotelSettings from './accommodations/HotelSettings';
 import AddNewRoom from './accommodations/AddNewRoom';
 import RoomSettings from './accommodations/RoomSettings';
 import HotelRooms from './accommodations/HotelRooms';
-import DeleteRoom from './accommodations/DeleteRoom';
-import DeleteHotel from './accommodations/DeleteHotel';
+
+
 
 const HomePage = ({history}) => {
     if (!isLoggedIn()) {
@@ -36,11 +36,11 @@ const HomePage = ({history}) => {
                     <Route path={'/settings'} component={Settings}/>
                     <Route path={'/accommodations/add_new_hotel'} component={AddNewHotel}/>
                     <Route path={'/accommodations/hotel/:id/settings'} component={HotelSettings}/>
-                    <Route path={'/accommodations/hotel/:id/delete'} component={DeleteHotel}/>
+                    
                     <Route path={'/accommodations/hotel/:id/rooms/add'} component={AddNewRoom}/>
                     <Route path={'/accommodations/hotel/:id/rooms'} component={HotelRooms}/>
                     <Route path={'/accommodations/hotel/:id/room/:room_number/settings'} component={RoomSettings}/>
-                    <Route path={'/accommodations/hotel/:id/room/:room_number/delete'} component={DeleteRoom}/>
+                    
                     <Route path={'/accommodations'} component={Accommodations}/>
                 </Switch>
             </Router>
