@@ -84,6 +84,18 @@ def ensure_tables() -> None:
                 ' UNIQUE(hotel_id, room_number)'
                 ')'
         )
+        cur.execute('SELECT name FROM categories')
+        categories = set(map(lambda x: x[0], cur.fetchall()))
+        for category in ('Стандарт','Одноместный','Двухместный','Люкс','Аппартаменты'):
+            if category not in categories : 
+                cur.execute('INSERT INTO categories (name) VALUES (%s)', (category,))
+
+        cur.execute('SELECT name FROM permissions')
+        permissions = set(map(lambda x: x[0], cur.fetchall()))
+        for permission in ('нет','дети','животные','курение','шум'):
+            if permission not in permissions : 
+                cur.execute('INSERT INTO permissions (name) VALUES (%s)', (permission,))
+
         props.conn.commit()
 
 # hotels
@@ -263,6 +275,9 @@ def delete_permission(permission_id: int) -> Response:
         cur.execute('DELETE FROM permissions where id = %s ', (permission_id))
         props.conn.commit()
     return make_response(jsonify({'result': f'permission  with id={permission_id}'}))
+
+
+
 
 
 #error
