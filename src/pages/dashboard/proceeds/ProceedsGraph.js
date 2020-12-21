@@ -9,7 +9,7 @@ import {
 } from 'react-vis';
 import "react-vis/dist/style.css";
 import './proceeds_graph.css';
-import useWindowWidth from '../../WindowWidth';
+import useWindowWidth from '../../../components/useWindowWidth';
 import {DATA} from './proceeds_data';
 
 export default function ProceedsGraph() {

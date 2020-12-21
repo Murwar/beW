@@ -8,7 +8,8 @@ import Card from "semantic-ui-react/dist/commonjs/views/Card";
 import {Redirect} from "react-router";
 import store from 'store';
 import isLoggedIn from "./is_logged_in";
-import useWindowWidth from "../WindowWidth";
+import useWindowWidth from "../../components/useWindowWidth";
+import ApiCalendar from "../calendar/ApiCalendar";
 
 const Login = (props) => {
     store.set('loggedIn', false);
@@ -33,6 +34,7 @@ const Login = (props) => {
         if (passValid && logValid) {
             alert('Успешый вход!');
             store.set('loggedIn', true);
+            ApiCalendar.handleAuthClick();
             history.push('/');
         } else if (!passValid || !logValid) {
             alert('Wrong password or login!');

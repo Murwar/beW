@@ -6,7 +6,7 @@ import {
 import "react-vis/dist/style.css";
 import './visits_graph.css';
 import {DATA} from "./visits_data";
-import numberToDay from "../NumberToDay";
+import numberToDay from "../../../components/NumberToDay";
 
 export default function VisitsGraph() {
     const [crosshairValues, setCrosshairValues] = useState([]);

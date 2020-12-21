@@ -1,6 +1,5 @@
 export const DATA = [
-    [
-        {
+    [{
             name: "Анастасия Зинчук",
             category: "Стандартный",
             peopleNumber: 2,

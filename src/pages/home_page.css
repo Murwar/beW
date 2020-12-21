@@ -7,9 +7,7 @@
     font-family: 'Lato', sans-serif;
 }
 
-.accommodations,
-.arrival_schedule, .booking_schedule,
-.settings, .statistics, .logout {
+.settings {
     display: grid;
     grid-column-start: 2;
     grid-column-end: 16;
@@ -19,10 +17,15 @@
     justify-content: center;
     font-size: 3rem;
 }
+.arrival_schedule, .booking_schedule{
 
+    font-size: 3rem;
+}
 .page {
     display: grid;
-    grid-template-columns: repeat(15, 1fr);
+    height: 100%;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, 1fr);
     grid-auto-rows: minmax(100px, auto);
 }
 
@@ -30,5 +33,5 @@
     position: relative;
     grid-column: 1;
     grid-row-start: 1;
-    grid-row-end: 5;
+    grid-row-end: 6;
 }

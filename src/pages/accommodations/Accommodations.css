@@ -1,0 +1,130 @@
+.accommodations {
+    grid-column-start: 2;
+    grid-column-end: 16;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rectangle_accommodations {
+    width: 344px;
+    height: 382px;
+    margin: 20px;
+    margin-top: 10px;
+    background: white;
+
+    border-radius: 20px;
+    border-style: solid;
+    border-color: rgba(224, 228, 231, 0.836);
+
+    transition: all linear .2s;
+}
+
+.rectangle_accommodations:hover {
+    border-color: white;
+    box-shadow: 0 14px 28px rgba(3, 69, 131, 0.603), 0 4px 12px rgba(36, 131, 219, 0.842);
+
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+.textInCards_accommodations {
+    font-family: Lato, serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+
+    text-align: center;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    color: #2e3a59;
+}
+
+.image_accommodations {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 314px;
+    height: 200px;
+    border-radius: 20px;
+
+}
+
+button.buttonAddNewHotel_accommodations {
+    width: 304px;
+    height: 342px;
+    margin: 20px;
+    margin-top: 25px;
+
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    color: #faf8f8;
+
+    background: rgba(108, 176, 240, 0.973);
+    border-radius: 20px;
+
+
+    transition: all linear .2s;
+}
+button.buttonAddNewHotel_accommodations:hover {
+    font-size: 18px;
+
+    border-color: white;
+
+    background: rgba(40, 125, 204, 0.973);
+    box-shadow: 0 4px 15px rgba(36, 131, 219, 0.842);
+
+}
+
+button.hotelSettingsButtom_accommodations{
+    margin-left: 30px;
+    margin-bottom: 40px;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    color: #2e3a59;
+
+    background-color: white;
+    border-color: white;
+
+    transition: all linear .2s;
+}
+
+
+button.roomsButton_accommodations{
+    margin-left: 20px;
+    margin-bottom: 40px;
+    font-size: 12px;
+    text-align: center;
+    letter-spacing: 1.25px;
+    text-transform: uppercase;
+    color: #2e3a59;
+
+    background-color: white;
+    border-color: white;
+
+    transition: all linear .2s;
+}
+
+button.hotelSettingsButtom_accommodations:hover , .roomsButton_accommodations:hover {
+    font-size: 14px;
+    background: rgba(40, 125, 204, 0.973);
+
+}
+
+.button_link {
+    margin-top: 0;
+}
+
+

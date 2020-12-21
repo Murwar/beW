@@ -1,0 +1,99 @@
+
+.modalDialog {
+    position: fixed;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    background: linear-gradient(to top left, rgba(60, 77, 175, 0.300), rgba(216, 57, 57, 0.300));
+
+    z-index: 99999;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    display: none;
+    pointer-events: none;
+}
+
+
+.modalDialog:target {
+    display: block;
+    pointer-events: auto;
+}
+
+.modalDialog > div {
+    width: 500px;
+    height: 200px;
+
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+
+
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+}
+
+.modal_title {
+    letter-spacing: 1.20px;
+    font-size: 16px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #bb4545;
+
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
+button.button_modal_delete {
+    width: 100px;
+    height: 60px;
+
+    margin-left: 100px;
+
+    letter-spacing: 1.20px;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    border-color: rgba(167, 46, 30, 0.973);
+    background: rgba(240, 134, 108, 0.973);
+    border-radius: 20px;
+}
+
+button.button_modal_delete:hover {
+
+    border-color: rgba(184, 29, 9, 0.973);
+    background: rgba(248, 51, 25, 0.973);
+    box-shadow: 0 4px 15px rgba(240, 57, 37, 0.973);
+
+}
+
+
+button.button_cancel_modal {
+    width: 100px;
+    height: 60px;
+
+    margin-left: 80px;
+    letter-spacing: 1.20px;
+    font-size: 12px;
+    text-align: center;
+    text-transform: uppercase;
+    border-color: white;
+    background: rgba(108, 176, 240, 0.973);
+    border-radius: 20px;
+}
+
+button.button_cancel_modal:hover {
+
+    border-color: white;
+    background: rgba(40, 125, 204, 0.973);
+    box-shadow: 0 4px 15px rgba(36, 131, 219, 0.842);
+}
+
+

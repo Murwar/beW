@@ -36,7 +36,7 @@ export const SidebarConstants = [
         cName: 'nav-text'
     },
     {
-        title: 'Настройки объекта',
+        title: 'Настройки',
         path: '/settings',
         icon: <MdIcons.MdSettings/>,
         cName: 'nav-text'

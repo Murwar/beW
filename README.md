@@ -17,6 +17,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+For accommodations to work you also need to run backend:
+
+1. Install python3, version >= 3.7
+2. Install postgres database (could be Docker container), know its address, login and password
+3. Launch `python backend/accommodations/backend.py` with parameters to satisfy your installation (`--help` will list possible arguments)
+
 ### `yarn test`
 
 Launches the test runner in the interactive watch mode.\

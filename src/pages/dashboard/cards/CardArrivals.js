@@ -25,7 +25,6 @@ export default function CardArrivals(props) {
         }
     }));
 
-
     const classes = useStyles();
     return (
         <ThemeProvider theme={theme}>

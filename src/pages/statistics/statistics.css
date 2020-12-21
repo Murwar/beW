@@ -1,0 +1,100 @@
+.statistics {
+	display: grid;
+	grid-column-start: 2;
+	grid-column-end: 16;
+	height: 100vh;
+	margin: 1rem;
+}
+
+.stat-main-block {
+	grid-column-start: 2;
+	grid-column-end: 16;
+	grid-row-start: 1;
+	margin-left: 5rem;
+	margin-right: 5rem;
+	margin-top: 2rem;
+	border-radius: 10px;
+	border-style: solid;
+	border-color: rgba(224, 228, 231, 0.836);
+	transition: all linear .2s;
+	box-shadow: 0 7px 10px rgba(3, 69, 131, 0.603), 0 2px 4px rgba(36, 131, 219, 0.842);
+}
+
+.large-title {
+	margin-left: 1.5rem;
+	margin-bottom: 0.3em;
+	margin-top: 0.3em;
+	font-size: 45px;
+	letter-spacing: 0.15px;
+	font-weight: 700;
+	letter-spacing: 0.15px;
+	color: #2E3A59;
+}
+
+.small-title {
+	margin-bottom: 0.3em;
+	margin-top: 0.3em;
+	font-size: 25px;
+	text-align: center;
+	letter-spacing: 0.15px;
+	font-weight: 100;
+	letter-spacing: 0.15px;
+	color: #2E3A59;
+}
+
+.separator {
+	display: block;
+	margin-left: 0.2rem;
+	margin-right: 0.2rem;
+	border-width: 2px;
+}
+
+.graph {
+	padding-top: 0.2rem;
+	padding-bottom: 0.2rem;
+	margin-top: 0.2rem;
+	margin-bottom: 0.2rem;
+}
+
+.s-title {
+	margin-left: 1.5rem;
+	margin-bottom: 0.3em;
+	margin-top: 0.3em;
+	font-size: 45px;
+	letter-spacing: 0.15px;
+	font-weight: 700;
+	color: #2E3A59;
+}
+
+.stat_proceeds, .stat_book {
+	display: grid;
+	position: relative;
+	grid-row: 1;
+	grid-column: 2;
+	max-width: 900px;
+	justify-content: center;
+	margin: 1rem auto;
+}
+
+.mini_graphs {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+	grid-row: 1;
+	grid-column: 3;
+}
+.mini_table {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+	grid-row: 1;
+	grid-column: 3;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 1rem;
+	max-width: 57.5rem;
+	text-align: left;
+}
+.stat_visits, .stat_arrivals{
+	margin: 0 1rem;
+}
