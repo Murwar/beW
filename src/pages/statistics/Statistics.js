@@ -9,27 +9,12 @@ import TableArrival from "./TableArrival";
 import TableSpending from "./TableSpending";
 
 import "./statistics.css"
-
-import ApiCalendar from '../calendar/ApiCalendar.js';
-
+import DataCalendarLoader from "./DataCalendarLoader";
 
 class Statistics extends Component {
 
     render() {
-        var date = new Date();
-        var start = new Date(date.getFullYear(), date.getMonth(), 0);
-        var end = new Date(date.getFullYear(), date.getMonth() + 1, -1);
-        console.log(start);
-        var loop = new Date(start);
-        var nnn = 0;
-        while (loop <= end) {
-            nnn = nnn + 1
-            var newDate = loop.setDate(loop.getDate() + 1);
-            ApiCalendar.listBookedEvents(nnn, new Date(newDate), 50)
-            ApiCalendar.listProblemEvents(nnn, new Date(newDate), 50)
-            loop = new Date(newDate);
-        }
-
+        DataCalendarLoader();
         return (
             <div className="stat-main-block">
                 <div className="large-title">Статистика</div>

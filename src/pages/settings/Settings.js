@@ -5,7 +5,12 @@ import ApiCalendar from "../calendar/ApiCalendar";
 export default class Settings extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            hotels: [],
+            selectedHotel: null
+        }
         this.handleItemClick = this.handleItemClick.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     handleItemClick(event: SyntheticEvent<any>, name: string): void {
@@ -16,10 +21,45 @@ export default class Settings extends React.Component {
         }
     }
 
+    handleChange = (event) => {
+        this.setState({selectedHotel: event.target.value});
+        localStorage.setItem("selectedHotel", event.target.value);
+    }
+
+    componentDidMount() {
+        fetch('http://localhost:3001/hotels/')
+            .then(res => res.json())
+            .then(result => {
+                    this.setState({
+                        hotels: result.hotels
+                    })
+                },
+                error => {
+                    this.setState({
+                        error
+                    })
+                }
+            )
+        let selected = localStorage.getItem("selectedHotel");
+        this.setState({selectedHotel: selected});
+    }
+
+    componentDidUpdate() {
+
+    }
+
     render(): ReactNode {
+
         return (
             <div className="main-block">
                 <div className="large-title">Настройки</div>
+                <hr className="separator"/>
+                <div className="small-title">Выбор гостиницы</div>
+                <select className={"select-hotels"} value={this.state.selectedHotel} onChange={this.handleChange}>
+                    {this.state.hotels.map((e, key) => {
+                        return <option key={key} value={e.value}>{e.name}</option>;
+                    })}
+                </select>
                 <hr class="separator"/>
                 <div className="small-title">Календари</div>
                 <div className="but-list">

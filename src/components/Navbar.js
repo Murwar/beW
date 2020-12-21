@@ -17,7 +17,7 @@ const handleLogout = history => () => {
 const Navbar = ({history}) => {
     const [sidebar, setSidebar] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const [guestHouse] = useState("web guest house");
+    const [guestHouse, setHouseName] = useState(localStorage.getItem("selectedHotel"));
 
     function setSelectedIdx(option) {
         localStorage.setItem('SelectedIndex', option);
@@ -29,9 +29,14 @@ const Navbar = ({history}) => {
         setSidebar(option);
     }
 
+    function setGuestHouseName(option) {
+        setHouseName(option);
+    }
+
     useEffect(() => {
         setSelectedIdx(localStorage.getItem('SelectedIndex') | 0);
         setSelectedSidebar(localStorage.getItem('SelectedSidebar') | false);
+        setGuestHouseName(localStorage.getItem("selectedHotel"));
     })
 
     const showSidebar = () => setSelectedSidebar(!localStorage.getItem('SelectedSidebar') | !sidebar);
