@@ -9,6 +9,7 @@ import VisitsGraph from "./visits/VisitsGraph";
 import ArrivalsGraph from "./arrivals_graph/ArrivalsGraph";
 import BoxInfo from "./box_info/BoxInfo";
 import './dashboard.css'
+import ApiCalendar from '../calendar/ApiCalendar.js';
 
 class Dashboard extends Component {
     state = {
@@ -19,6 +20,19 @@ class Dashboard extends Component {
     }
 
     render() {
+		    var date = new Date();
+      var start = new Date(date.getFullYear(), date.getMonth(), 0);
+      var end = new Date(date.getFullYear(), date.getMonth() + 1, -1);
+      console.log(start);
+      var loop = new Date(start);
+      var nnn = 0;
+      while (loop <= end) {
+          nnn = nnn + 1
+          var newDate = loop.setDate(loop.getDate() + 1);
+          ApiCalendar.listBookedEvents(nnn, new Date(newDate), 50)
+            ApiCalendar.listProblemEvents(nnn, new Date(newDate), 50)
+          loop = new Date(newDate);
+      }
         return (
             <div className='dashboard'>
                 <div className={"left_column"}>

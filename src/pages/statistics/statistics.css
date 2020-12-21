@@ -7,7 +7,6 @@
 }
 
 .main-block {
-	position: inherit;
 	grid-column-start: 2;
 	grid-column-end: 16;
 	grid-row-start: 1;
@@ -21,6 +20,28 @@
 	transition: all linear .2s;
 	box-shadow: 0 7px 10px rgba(3, 69, 131, 0.603), 0 2px 4px rgba(36, 131, 219, 0.842);
 
+}
+
+.large-title {
+	margin-left: 1.5rem;
+	margin-bottom: 0.3em;
+	margin-top: 0.3em;
+	font-size: 45px;
+	letter-spacing: 0.15px;
+	font-weight: 700;
+	letter-spacing: 0.15px;
+	color: #2E3A59;
+}
+
+.small-title {
+	margin-bottom: 0.3em;
+	margin-top: 0.3em;
+	font-size: 25px;
+	text-align: center;
+	letter-spacing: 0.15px;
+	font-weight: 100;
+	letter-spacing: 0.15px;
+	color: #2E3A59;
 }
 
 .separator {
@@ -59,12 +80,21 @@
 
 .mini_graphs {
 	display: flex;
-	justify-content: center;
 	flex-direction: row;
 	grid-row: 1;
 	grid-column: 3;
 	margin: 1rem;
 }
+.mini_table {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+	grid-row: 1;
+	grid-column: 3;
+	margin-left: 7.5rem;
+	margin-right: 7.5rem;
+	margin-bottom: 1rem;
+	text-align: left;
 
 .stat_visits, .stat_arrivals{
 	margin: 0 1rem;

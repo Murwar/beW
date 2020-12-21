@@ -1,23 +1,23 @@
 import React, {Component} from 'react';
 import ProceedsGraph from "../dashboard/proceeds/ProceedsGraph";
 import BookedGraph from "../dashboard/proceeds/BookedGraph";
+import ProblemGraph from "../dashboard/proceeds/ProblemGraph";
+import AvGraph from "../dashboard/proceeds/AvGraph";
 import ArrivalsGraph from "../dashboard/arrivals_graph/ArrivalsGraph";
+import DeparturesGraph from "../dashboard/arrivals_graph/DeparturesGraph";
 import VisitsGraph from "../dashboard/visits/VisitsGraph";
+import TableArrival from "../dashboard/proceeds/TableArrival";
+import TableSpending from "../dashboard/proceeds/TableSpending";
+
 import "./statistics.css"
+
 import ApiCalendar from '../calendar/ApiCalendar.js';
 
-var DATA = [[
-    {
-        x: 'Nov 9, 2020',
-        y: 10000
-    }
-]];
+
 
 class Statistics extends Component {
 
     render() {
-
-
         var date = new Date();
         var start = new Date(date.getFullYear(), date.getMonth(), 0);
         var end = new Date(date.getFullYear(), date.getMonth() + 1, -1);
@@ -28,31 +28,46 @@ class Statistics extends Component {
             nnn = nnn + 1
             var newDate = loop.setDate(loop.getDate() + 1);
             ApiCalendar.listBookedEvents(nnn, new Date(newDate), 50)
+              ApiCalendar.listProblemEvents(nnn, new Date(newDate), 50)
             loop = new Date(newDate);
         }
 
         return (
             <div className="main-block">
-                <div className="s-title">Статистика</div>
-                <hr class="separator"/>
-
+            <div className="large-title">Статистика</div>
+            <hr class="separator" />
+            <div className="small-title">Финансы</div>
 
                 <div className={"stat_proceeds"}>
                     <ProceedsGraph/>
                 </div>
+                <div className={"mini_table"}>
+              <TableSpending/>
+              </div>
+                <hr class="separator" />
+                  <div className="small-title">Номера</div>
+                  <div className={"mini_table"}>
+                <TableArrival/>
+                </div>
                 <div className={"stat_book"}>
                     <BookedGraph/>
                 </div>
+                <div className={"stat_book"}>
+                    <ProblemGraph/>
+                </div>
+                <div className={"stat_book"}>
+                    <AvGraph/>
+                </div>
                 <div className={"mini_graphs"}>
-                    <div className={"stat_arrivals"}>
-                        <ArrivalsGraph/>
-                    </div>
-
-                    <div className={"stat_visits"}>
-                        <VisitsGraph/>
-                    </div>
+                    <ArrivalsGraph/>
+                    <DeparturesGraph/>
                 </div>
 
+                    <hr class="separator" />
+                      <div className="small-title">Сайт</div>
+                <div className={"mini_graphs"}>
+                    <VisitsGraph/>
+                </div>
             </div>
         );
     }
