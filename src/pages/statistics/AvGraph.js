@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {
     XYPlot,
     XAxis,
@@ -8,12 +8,19 @@ import {
     Crosshair
 } from 'react-vis';
 import "react-vis/dist/style.css";
-import './proceeds_graph.css';
-import useWindowWidth from '../../../components/WindowWidth';
-import {DATA} from '../../calendar/ApiCalendar.js';
+import '../dashboard/proceeds/proceeds_graph.css';
+import useWindowWidth from '../../components/useWindowWidth';
+import {DATA} from '../calendar/ApiCalendar.js';
 
 export default function AvGraph() {
-    const [crosshairValues, setCrosshairValues] = useState([]);
+
+    function convertToPercentages() {
+        let tmp = DATA;
+        for (let i = 0; i < DATA[0].length; i++) {
+            tmp[0][i].y = ((50 - (DATA[0][i].y)) / 50) * 100;
+        }
+        return tmp;
+    }
 
     return (
         <div className={"proceeds"}>
@@ -21,7 +28,6 @@ export default function AvGraph() {
                 <p className={"proceeds_title"}>Процент свободных номеров</p>
                 <XYPlot
                     xType="ordinal"
-                    onMouseLeave={() => setCrosshairValues([])}
                     width={useWindowWidth() >= 1161 ? 885 : 610} height={250}>
                     <HorizontalGridLines/>
                     <XAxis
@@ -43,17 +49,12 @@ export default function AvGraph() {
                         orientation="left"
                     />
                     <LineSeries
-                        onNearestX={(value, {index}) =>
-                            setCrosshairValues(DATA.map(d => d[index]))}
-                        data={DATA[0]}
+                        data={convertToPercentages()[0]}
                         curve={'curveMonotoneX'}
                         opacity={1}
                         stroke={"#2196F3"}
                         strokeStyle="solid"
                         style={{}}/>
-                    <Crosshair values={crosshairValues} titleFormat={(d) => ({
-                        title: 'Дата', value: new Date(Date.parse(d[0].x)).toLocaleDateString()
-                    })} itemsFormat={(d) => [{title: 'Cвободно, %', value: ((50-(d[0].y))/50)*100}]}/>
                 </XYPlot>
             </div>
         </div>

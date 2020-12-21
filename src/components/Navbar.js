@@ -9,6 +9,8 @@ import store from "store";
 
 const handleLogout = history => () => {
     store.remove('loggedIn');
+    localStorage.setItem('SelectedIndex', 0);
+    localStorage.setItem('SelectedSidebar', false);
     history.push('/login');
 }
 

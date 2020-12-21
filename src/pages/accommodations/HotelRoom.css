@@ -102,7 +102,8 @@ button.buttonAddRoom {
     width: 304px;
     height: 342px;
     margin: 20px;
-    margin-top: 25px;
+    margin-top: 30px;
+    margin-left: 40px;
 
     font-size: 14px;
     text-align: center;
@@ -115,6 +116,7 @@ button.buttonAddRoom {
 
     transition: all linear .2s;
 }
+
 button.buttonAddNewRoom:hover {
     font-size: 18px;
 
@@ -127,10 +129,10 @@ button.buttonAddNewRoom:hover {
 
 /* For all windows */
 
-.backButton{
+.backButton {
     width: 90px;
     height: 45px;
-    margin-left:1000px;
+    margin-left: 1040px;
 
     font-size: 10px;
     text-align: center;

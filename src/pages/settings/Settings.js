@@ -1,8 +1,6 @@
-import React, {ReactNode, SyntheticEvent} from "react";
-import ApiCalendar from "../calendar/ApiCalendar.js";
-import moment from "moment";
+import React from "react";
 import "./Settings.css";
-import {DATA} from "../calendar/ApiCalendar.js";
+import ApiCalendar from "../calendar/ApiCalendar";
 
 export default class Settings extends React.Component {
     constructor(props) {
@@ -38,7 +36,7 @@ export default class Settings extends React.Component {
                         Sign out
                     </button>
                 </div>
-                <hr class="separator"/>
+                <hr className="separator"/>
             </div>
         );
     }

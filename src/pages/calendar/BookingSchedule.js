@@ -1,10 +1,10 @@
-import React, {Component, useState} from "react";
+import React, {Component} from "react";
 import moment from "moment";
 import "moment/locale/ru";
 import ApiCalendar from "./ApiCalendar.js";
 import "./Spoiler.css";
 import "./Calendar.css";
-import {SingleDatePicker, DayPickerSingleDateController} from "react-dates";
+import {DayPickerSingleDateController} from "react-dates";
 
 const defaultProps = {
     // example props for the demo

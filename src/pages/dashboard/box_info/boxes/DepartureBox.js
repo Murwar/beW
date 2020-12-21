@@ -2,7 +2,7 @@ import {DATA} from "../clients_data";
 import ClientInfo from "../ClientInfo";
 import React from "react";
 
-export default function ArrivalsBox(props) {
+export default function DepartureBox(props) {
     if (props.status === 2) {
         if (DATA[2].length === 0) {
             return (<p className={"empty_box"}>Нет отъездов - нет уборок!)</p>);

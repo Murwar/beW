@@ -8,9 +8,9 @@ import {
     Crosshair
 } from 'react-vis';
 import "react-vis/dist/style.css";
-import './proceeds_graph.css';
-import useWindowWidth from '../../../components/WindowWidth';
-import {DATA} from '../../calendar/ApiCalendar.js';
+import '../dashboard/proceeds/proceeds_graph.css';
+import useWindowWidth from '../../components/useWindowWidth';
+import {DATA} from '../calendar/ApiCalendar.js';
 
 export default function BookedGraph() {
     const [crosshairValues, setCrosshairValues] = useState([]);

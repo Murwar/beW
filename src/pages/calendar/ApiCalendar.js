@@ -14,6 +14,7 @@ export const DATA = [[
         y: 10000
     }
 ]];
+
 class ApiCalendar {
     constructor() {
         this.sign = false;
@@ -245,14 +246,14 @@ console.log(date,b);
 
     listBookedEvents(num, date, maxResults) {
 
-      var dateEnd = new Date(Date.UTC(date.getFullYear()
-                           ,date.getMonth()
-                           ,date.getDate()-1
-                           ,23,59,59)).toISOString();
-      var dateStart = new Date(Date.UTC(date.getFullYear()
-                                                ,date.getMonth()
-                                                ,date.getDate()-1
-                                                ,0,0,0)).toISOString();
+        var dateEnd = new Date(Date.UTC(date.getFullYear()
+            , date.getMonth()
+            , date.getDate() - 1
+            , 23, 59, 59)).toISOString();
+        var dateStart = new Date(Date.UTC(date.getFullYear()
+            , date.getMonth()
+            , date.getDate() - 1
+            , 0, 0, 0)).toISOString();
         if (this.gapi) {
             return this.gapi.client.calendar.events.list({
                 'calendarId': "449jtc5acfnd0ohkrlpncsiubk@group.calendar.google.com",
@@ -263,19 +264,22 @@ console.log(date,b);
                 'maxResults': maxResults,
                 'q': 'booked'
             }).then(({result}: any) => {
-              var b = 0;
-              var events = result.items;
-              let eventsList = events.map(function (event) {
-                console.log(moment(event.end.date).toLocaleString('en-US',options),moment(date).toLocaleString('en-US',options));
-             if (moment(event.end.date).toLocaleString('en-US',options) !== moment(date).toLocaleString('en-US',options)) {
-                      b = b + 1
-                      console.log("Error: this.gapi not loaded");
-                      console.log(moment(event.end.date).toLocaleString('en-US',options),moment(date).toLocaleString('en-US',options));
-                  }
-              });
-                var options = { year: 'numeric', month: 'short', day: 'numeric' };
-console.log(date,b);
-  DATA[0][num-1] =  {x: new Date(date.getFullYear(), date.getMonth(), num).toLocaleString('en-US',options), y: b};
+                var b = 0;
+                var events = result.items;
+                let eventsList = events.map(function (event) {
+                    console.log(moment(event.end.date).toLocaleString('en-US', options), moment(date).toLocaleString('en-US', options));
+                    if (moment(event.end.date).toLocaleString('en-US', options) !== moment(date).toLocaleString('en-US', options)) {
+                        b = b + 1
+                        console.log("Error: this.gapi not loaded");
+                        console.log(moment(event.end.date).toLocaleString('en-US', options), moment(date).toLocaleString('en-US', options));
+                    }
+                });
+                var options = {year: 'numeric', month: 'short', day: 'numeric'};
+                console.log(date, b);
+                DATA[0][num - 1] = {
+                    x: new Date(date.getFullYear(), date.getMonth(), num).toLocaleString('en-US', options),
+                    y: b
+                };
             });
             return true;
         } else {

@@ -9,8 +9,8 @@ export default function DatePicker({date, onChange}) {
     return (
         <SingleDatePicker
             numberOfMonths={window.innerWidth < 600 ? 1 : 2}
-            onDateChange={date => onChange({target: {value: date}})}
-            onFocusChange={({focused}) => setFocused(focused)}
+            onDateChange={changeDate => onChange({target: {value: changeDate}})}
+            onFocusChange={({f}) => setFocused(f)}
             focused={focused}
             date={date}
             displayFormat="YYYY-MM-DD"
