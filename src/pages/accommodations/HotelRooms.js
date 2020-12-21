@@ -12,6 +12,7 @@ class HotelFirst extends Component {
             error: null,
             loaded: 0,
             hotel_name: null,
+            hotel_rooms: null,
             rooms: []
         }
     }
@@ -22,7 +23,8 @@ class HotelFirst extends Component {
             .then(result => {
                 this.setState({
                     loaded: this.state.loaded + 1,
-                    hotel_name: result.name
+                    hotel_name: result.name,
+                    hotel_rooms: result.room_number
                 })
             },
                 error => {
@@ -55,7 +57,7 @@ class HotelFirst extends Component {
     }
 
     render() {
-        const { error, loaded, hotel_name, rooms } = this.state;
+        const { error, loaded, hotel_name, hotel_rooms, rooms } = this.state;
         if (loaded !== 2) {
             return (
                 <div>
@@ -97,18 +99,20 @@ class HotelFirst extends Component {
             }
             split_rooms.push(cur)
         }
-        if (split_rooms.length === 0 || split_rooms[split_rooms.length - 1].length === oneLine) {
-            split_rooms.push([])
+        if (rooms.length < hotel_rooms) {
+            if (split_rooms.length === 0 || split_rooms[split_rooms.length - 1].length === oneLine) {
+                split_rooms.push([])
+            }
+            split_rooms[split_rooms.length - 1].push(
+                <div>
+                    <a href={'/accommodations/hotel/' + this.props.match.params.id + '/rooms/add'}>
+                        <button className={'buttonAddRoom'} type='button'>
+                            ДОБАВИТЬ НОВЫЙ <br /> номер
+                        </button>
+                    </a>
+                </div>
+            )
         }
-        split_rooms[split_rooms.length - 1].push(
-            <div>
-                <a href={'/accommodations/hotel/' + this.props.match.params.id + '/rooms/add'}>
-                    <button className={'buttonAddRoom'} type='button'>
-                        ДОБАВИТЬ НОВЫЙ <br /> номер
-                    </button>
-                </a>
-            </div>
-        )
         return (
             <div className={'hotel_first'}>
                 <h1 className={'title'} >{hotel_name}</h1>
