@@ -116,11 +116,10 @@
 }
 
 .link {
-
     border-radius: 5px;
-    background: #00a699;
+    background: #2196F3;
     color: #fff;
-    box-shadow: 0 3px 0 #0c8d72;
+    box-shadow: 0 3px 0 #E3F2FD;
     border: 2px solid transparent;
     margin-left: 8px;
     font-size: 1rem;
