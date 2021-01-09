@@ -99,8 +99,6 @@ def ensure_tables() -> None:
         props.conn.commit()
 
 # hotels
-
-
 @app.route('/hotels/', methods=['GET'])
 def get_hotels() -> Response:
     with props.conn.cursor() as cur:

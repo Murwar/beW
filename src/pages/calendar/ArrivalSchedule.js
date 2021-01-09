@@ -153,73 +153,72 @@ class ArrivalSchedule extends Component {
         );
 
         return (
-          <div className="main-block">
-            <div className="large-title">Календарь заездов</div>
-            <hr class="separator" />
-            <div className="arrival_schedule">
-                <div className="calendarr">
-                    <DayPickerSingleDateController
-                        {...defaultProps}
-                        date={this.state.date} // momentPropTypes.momentObj or null  {events.length > 0 && eventsList}
-                        onDateChange={this.handleChange} // PropTypes.func.isRequired  {otiezdEvents.length > 0 && OteventsList}
-                        focused={this.state.focused} // PropTypes.bool   <h1>{this.state.otiezdStr}</h1>
-                        onFocusChange={({focused}) => this.setState({focused})}
-                        renderCalendarInfo={() => (
-                            <div>
-                                <div className="spoilb">
-                                    <div className="spoil">
-                                        <details>
-                                            <summary>
-                                                Отъезды: {this.state.checkoutApartList.length}
-                                            </summary>
+            <div className="main-block">
+                <div className="large-title">Календарь заездов</div>
+                <hr class="separator"/>
+                <div className="arrival_schedule">
+                    <div className="calendarr">
+                        <DayPickerSingleDateController
+                            {...defaultProps}
+                            date={this.state.date} // momentPropTypes.momentObj or null  {events.length > 0 && eventsList}
+                            onDateChange={this.handleChange} // PropTypes.func.isRequired  {otiezdEvents.length > 0 && OteventsList}
+                            focused={this.state.focused} // PropTypes.bool   <h1>{this.state.otiezdStr}</h1>
+                            onFocusChange={({focused}) => this.setState({focused})}
+                            renderCalendarInfo={() => (
+                                <div>
+                                    <div className="spoilb">
+                                        <div className="spoil">
+                                            <details>
+                                                <summary>
+                                                    Отъезды: {this.state.checkoutApartList.length}
+                                                </summary>
 
                                                 <div className="spoil-inside">
                                                     {checkoutApartList.length > 0 && checkoutApartEvents}
 
-                                            </div>
-                                        </details>
+                                                </div>
+                                            </details>
 
-                                        <details>
-                                            <summary>
-                                                Заезды: {this.state.checkinApartList.length}
-                                            </summary>
+                                            <details>
+                                                <summary>
+                                                    Заезды: {this.state.checkinApartList.length}
+                                                </summary>
 
-                                            <div className="spoil-inside">
-                                                {checkinApartList.length > 0 && checkinApartEvents}
-                                            </div>
+                                                <div className="spoil-inside">
+                                                    {checkinApartList.length > 0 && checkinApartEvents}
+                                                </div>
 
-                                        </details>
-                                    </div>
-                                    <div className="spoil">
-                                        <details>
-                                            <summary>
-                                                Неубранные номера: {this.state.dirtyApartList.length}
-                                            </summary>
+                                            </details>
+                                        </div>
+                                        <div className="spoil">
+                                            <details>
+                                                <summary>
+                                                    Неубранные номера: {this.state.dirtyApartList.length}
+                                                </summary>
 
                                                 <div className="spoil-inside">
                                                     {dirtyApartList.length > 0 && dirtyApartEvents}
                                                 </div>
 
-                                        </details>
+                                            </details>
 
-                                        <details>
-                                            <summary>
-                                                Проблемные номера: {this.state.brokenApartList.length}
-                                            </summary>
+                                            <details>
+                                                <summary>
+                                                    Проблемные номера: {this.state.brokenApartList.length}
+                                                </summary>
 
                                                 <div className="spoil-inside">
                                                     {brokenApartList.length > 0 && brokenApartEvents}
                                                 </div>
-                                    
-                                        </details>
+                                            </details>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        )}
-                        id="your_unique_id"
-                        enableOutsideDays
-                    />
-                </div>
+                            )}
+                            id="your_unique_id"
+                            enableOutsideDays
+                        />
+                    </div>
                 </div>
             </div>
         );

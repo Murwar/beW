@@ -27,7 +27,7 @@ export default function VisitsGraph() {
                         orientation="bottom"
                         tickSize={0}
                         tickFormat={function tickFormat(d) {
-                            return numberToDay(d)
+                            return numberToDay(new Date(2021, 0, d).getDay())
                         }}
                     />
                     <VerticalBarSeries
