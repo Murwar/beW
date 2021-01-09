@@ -21,7 +21,6 @@
     "react-router-auth": "^1.0.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
-    "react-sidebar": "^3.0.2",
     "react-vis": "^1.11.7",
     "store": "^2.0.12",
     "styled-components": "^5.2.1",

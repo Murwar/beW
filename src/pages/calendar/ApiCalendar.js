@@ -198,14 +198,14 @@ class ApiCalendar {
 
     listProblemEvents(num, date, maxResults) {
 
-      var dateEnd = new Date(Date.UTC(date.getFullYear()
-                           ,date.getMonth()
-                           ,date.getDate()-1
-                           ,23,59,59)).toISOString();
-      var dateStart = new Date(Date.UTC(date.getFullYear()
-                                                ,date.getMonth()
-                                                ,date.getDate()-1
-                                                ,0,0,0)).toISOString();
+        var dateEnd = new Date(Date.UTC(date.getFullYear()
+            , date.getMonth()
+            , date.getDate() - 1
+            , 23, 59, 59)).toISOString();
+        var dateStart = new Date(Date.UTC(date.getFullYear()
+            , date.getMonth()
+            , date.getDate() - 1
+            , 0, 0, 0)).toISOString();
         if (this.gapi) {
             return this.gapi.client.calendar.events.list({
                 'calendarId': "449jtc5acfnd0ohkrlpncsiubk@group.calendar.google.com",
@@ -216,24 +216,27 @@ class ApiCalendar {
                 'maxResults': maxResults,
                 'q': 'broken'
             }).then(({result}: any) => {
-              var b = 0;
-              var events = result.items;
-              let eventsList = events.map(function (event) {
-                console.log(moment(event.end.date).toLocaleString('en-US',options),moment(date).toLocaleString('en-US',options));
-             if (moment(event.end.date).toLocaleString('en-US',options) !== moment(date).toLocaleString('en-US',options)) {
+                var b = 0;
+                var events = result.items;
+                let eventsList = events.map(function (event) {
+                    console.log(moment(event.end.date).toLocaleString('en-US', options), moment(date).toLocaleString('en-US', options));
+                    if (moment(event.end.date).toLocaleString('en-US', options) !== moment(date).toLocaleString('en-US', options)) {
 
-                      if (
-                          event.start.date === moment(dateStart).format("YYYY-MM-DD")
-                      ) {
-                          b = b + 1
-                      }
-                      console.log("Error: this.gapi not loaded");
-                      console.log(moment(event.end.date).toLocaleString('en-US',options),moment(date).toLocaleString('en-US',options));
-                  }
-              });
-                var options = { year: 'numeric', month: 'short', day: 'numeric' };
-console.log(date,b);
-  PROBLEMDATA[0][num-1] =  {x: new Date(date.getFullYear(), date.getMonth(), num).toLocaleString('en-US',options), y: b};
+                        if (
+                            event.start.date === moment(dateStart).format("YYYY-MM-DD")
+                        ) {
+                            b = b + 1
+                        }
+                        console.log("Error: this.gapi not loaded");
+                        console.log(moment(event.end.date).toLocaleString('en-US', options), moment(date).toLocaleString('en-US', options));
+                    }
+                });
+                var options = {year: 'numeric', month: 'short', day: 'numeric'};
+                console.log(date, b);
+                PROBLEMDATA[0][num - 1] = {
+                    x: new Date(date.getFullYear(), date.getMonth(), num).toLocaleString('en-US', options),
+                    y: b
+                };
             });
             return true;
         } else {
@@ -243,9 +246,7 @@ console.log(date,b);
     }
 
 
-
     listBookedEvents(num, date, maxResults) {
-
         var dateEnd = new Date(Date.UTC(date.getFullYear()
             , date.getMonth()
             , date.getDate() - 1

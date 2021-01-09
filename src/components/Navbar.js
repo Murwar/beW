@@ -6,12 +6,14 @@ import "./Navbar.css";
 import {IconContext} from "react-icons";
 import avatar from '../resources/images/avatar.png'
 import store from "store";
+import ApiCalendar from "../pages/calendar/ApiCalendar";
 
 const handleLogout = history => () => {
     store.remove('loggedIn');
-    localStorage.setItem('SelectedIndex', 0);
-    localStorage.setItem('SelectedSidebar', false);
+    window.sessionStorage.setItem('SelectedIndex', 0);
+    window.sessionStorage.setItem('SelectedSidebar', false);
     history.push('/login');
+    ApiCalendar.handleSignoutClick();
 }
 
 const Navbar = ({history}) => {
@@ -20,12 +22,12 @@ const Navbar = ({history}) => {
     const [guestHouse, setHouseName] = useState(localStorage.getItem("selectedHotel"));
 
     function setSelectedIdx(option) {
-        localStorage.setItem('SelectedIndex', option);
+        window.sessionStorage.setItem('SelectedIndex', option);
         setSelectedIndex(option);
     }
 
     function setSelectedSidebar(option) {
-        localStorage.setItem('SelectedSidebar', option);
+        window.sessionStorage.setItem('SelectedSidebar', option);
         setSidebar(option);
     }
 
@@ -34,12 +36,12 @@ const Navbar = ({history}) => {
     }
 
     useEffect(() => {
-        setSelectedIdx(localStorage.getItem('SelectedIndex') | 0);
-        setSelectedSidebar(localStorage.getItem('SelectedSidebar') | false);
+        setSelectedIdx(window.sessionStorage.getItem('SelectedIndex') | 0);
+        setSelectedSidebar(window.sessionStorage.getItem('SelectedSidebar') | false);
         setGuestHouseName(localStorage.getItem("selectedHotel"));
     })
 
-    const showSidebar = () => setSelectedSidebar(!localStorage.getItem('SelectedSidebar') | !sidebar);
+    const showSidebar = () => setSelectedSidebar(!window.sessionStorage.getItem('SelectedSidebar') | !sidebar);
 
     return (
         //проверяем свернут или открыт sidebar
