@@ -40,7 +40,6 @@ class ApiCalendar {
 
     /**
      * Update connection status.
-     * @param {boolean} isSignedIn
      */
     updateSigninStatus(isSignedIn) {
         this.sign = isSignedIn;
@@ -93,7 +92,6 @@ class ApiCalendar {
 
     /**
      * Set the default attribute calendar
-     * @param {string} newCalendar
      */
     setCalendar(newCalendar) {
         this.calendar = newCalendar;
@@ -101,7 +99,6 @@ class ApiCalendar {
 
     /**
      * Execute the callback function when a user is disconnected or connected with the sign status.
-     * @param callback
      */
     listenSign(callback) {
         if (this.gapi) {
@@ -113,7 +110,6 @@ class ApiCalendar {
 
     /**
      * Execute the callback function when gapi is loaded
-     * @param callback
      */
     onLoad(callback) {
         if (this.gapi) {
@@ -131,31 +127,6 @@ class ApiCalendar {
             this.gapi.auth2.getAuthInstance().signOut();
         } else {
             console.log("Error: this.gapi not loaded");
-        }
-    }
-
-    /**
-     * List all events in the calendar
-     * @param {number} maxResults to see
-     * @param {string} calendarId to see by default use the calendar attribute
-     * @returns {any}
-     */
-    listUpcomingEvents(maxResults, calendarId = this.calendar) {
-
-        if (this.gapi) {
-            return this.gapi.client.calendar.events.list({
-                'calendarId': calendarId,
-
-                'timeMin': moment().startOf("month").toISOString(),
-                'timeMax': moment().endOf("month").toISOString(),
-                'showDeleted': false,
-                'singleEvents': true,
-                'maxResults': maxResults,
-                'orderBy': 'startTime'
-            });
-        } else {
-            console.log("Error: this.gapi not loaded");
-            return false;
         }
     }
 
@@ -287,47 +258,6 @@ class ApiCalendar {
             console.log("Error: this.gapi not loaded");
             return false;
         }
-    }
-
-    /**
-     * Create an event from the current time for a certain period
-     * @param {number} time in minutes for the event
-     * @param {string} summary of the event
-     * @param {string} description of the event
-     * @param {string} calendarId
-     * @returns {any}
-     */
-    createEventFromNow({time, summary, description = ''}, calendarId = this.calendar) {
-        const event = {
-            summary,
-            description,
-            start: {
-                dateTime: (new Date()).toISOString(),
-                timeZone: "Europe/Paris",
-            },
-            end: {
-                dateTime: (new Date(new Date().getTime() + time * 60000)),
-                timeZone: "Europe/Paris",
-            },
-            colorId: 5
-        };
-        return this.gapi.client.calendar.events.insert({
-            'calendarId': calendarId,
-            'resource': event,
-        });
-    }
-
-    /**
-     * Create Calendar event
-     * @param {string} calendarId for the event.
-     * @param {object} event with start and end dateTime
-     * @returns {any}
-     */
-    createEvent(event, calendarId = this.calendar) {
-        return this.gapi.client.calendar.events.insert({
-            'calendarId': calendarId,
-            'resource': event,
-        });
     }
 }
 
