@@ -130,6 +130,28 @@ class ApiCalendar {
         }
     }
 
+    /**
+     * List all events in the calendar
+     */
+    listUpcomingEvents(maxResults, calendarId = this.calendar) {
+
+        if (this.gapi) {
+            return this.gapi.client.calendar.events.list({
+                'calendarId': calendarId,
+
+                'timeMin': moment().startOf("month").toISOString(),
+                'timeMax': moment().endOf("month").toISOString(),
+                'showDeleted': false,
+                'singleEvents': true,
+                'maxResults': maxResults,
+                'orderBy': 'startTime'
+            });
+        } else {
+            console.log("Error: this.gapi not loaded");
+            return false;
+        }
+    }
+
     listMonthEvents(date, maxResults, calendarId = this.calendar) {
 
         if (this.gapi) {
@@ -258,6 +280,39 @@ class ApiCalendar {
             console.log("Error: this.gapi not loaded");
             return false;
         }
+    }
+
+    /**
+     * Create an event from the current time for a certain period
+     */
+    createEventFromNow({time, summary, description = ''}, calendarId = this.calendar) {
+        const event = {
+            summary,
+            description,
+            start: {
+                dateTime: (new Date()).toISOString(),
+                timeZone: "Europe/Paris",
+            },
+            end: {
+                dateTime: (new Date(new Date().getTime() + time * 60000)),
+                timeZone: "Europe/Paris",
+            },
+            colorId: 5
+        };
+        return this.gapi.client.calendar.events.insert({
+            'calendarId': calendarId,
+            'resource': event,
+        });
+    }
+
+    /**
+     * Create Calendar event
+     */
+    createEvent(event, calendarId = this.calendar) {
+        return this.gapi.client.calendar.events.insert({
+            'calendarId': calendarId,
+            'resource': event,
+        });
     }
 }
 
